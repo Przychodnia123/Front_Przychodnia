@@ -64,6 +64,25 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="bg-dark-blue flex items-center p-20 text-2xl text-white">
+        <div className="w-1/3">
+          <Image
+            className=""
+            src="/doctor.png"
+            alt="service image"
+            width={362}
+            height={362}
+          />
+        </div>
+        <div className="space-x-40 w-2/3 justify-end">
+          <p>
+            Czuj się bezpiecznie, dbaj o swoje zdrowie! Skontaktuj się z nami
+            już teraz, aby skorzystać z naszych usług. Wspólnie z nami zadbaj o
+            swoje zdrowie i dobre samopoczucie!
+          </p>
+          <button>Zarejestruj się na e-wizytę</button>
+        </div>
+      </section>
     </>
   );
 }
