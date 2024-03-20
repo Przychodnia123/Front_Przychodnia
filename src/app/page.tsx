@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import services from "./lib/data/services.json";
 import { Title } from "./ui/components/Title/Title";
 
 export default function Home() {
@@ -35,6 +36,32 @@ export default function Home() {
           <Title size="text-2xl">Ponad 10,000 Zrealizowanych Wizyt</Title>
           <Title size="text-2xl">98% zadowolonych pacjentów</Title>
           <Title size="text-2xl">24/7 Dostęp do Opieki Medycznej</Title>
+        </div>
+      </section>
+      <section className="px-20 py-24 space-y-28">
+        <Title textAlign="text-center" size="text-5xl">
+          W Czym Możemy Pomóc
+        </Title>
+
+        <div className="grid grid-cols-3 gap-24">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="bg-white flex flex-col gap-y-6 px-7 py-10 rounded-md shadow-xl"
+            >
+              <Image
+                className="self-center"
+                src={service.image}
+                alt="service image"
+                width={152}
+                height={152}
+              />
+              <Title textAlign="text-left" size="text-2xl">
+                {service.title}
+              </Title>
+              <p>{service.description}</p>
+            </div>
+          ))}
         </div>
       </section>
     </>
