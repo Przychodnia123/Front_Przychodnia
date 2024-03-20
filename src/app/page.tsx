@@ -30,6 +30,13 @@ export default function Home() {
           />
         </div>
       </section>
+      <section className="px-24  flex justify-center">
+        <div className="w-full flex justify-between rounded-md bg-white px-28 py-12">
+          <Title size="text-2xl">Ponad 10,000 Zrealizowanych Wizyt</Title>
+          <Title size="text-2xl">98% zadowolonych pacjentów</Title>
+          <Title size="text-2xl">24/7 Dostęp do Opieki Medycznej</Title>
+        </div>
+      </section>
     </>
   );
 }
