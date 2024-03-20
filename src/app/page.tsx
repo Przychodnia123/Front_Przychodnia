@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import faq from "./lib/data/faq.json";
 import services from "./lib/data/services.json";
+import { AccordionMenu } from "./ui/components/AccordionMenu/AccordionMenu";
 import { Title } from "./ui/components/Title/Title";
 
 export default function Home() {
@@ -82,6 +84,12 @@ export default function Home() {
           </p>
           <button>Zarejestruj się na e-wizytę</button>
         </div>
+      </section>
+      <section>
+        <Title textAlign="text-left" size="text-2xl">
+          Najczęściej zadawane pytania przez pacjentów
+        </Title>
+        <AccordionMenu faq={faq} />
       </section>
     </>
   );
