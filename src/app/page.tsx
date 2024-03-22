@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import faq from "./lib/data/faq.json";
+import reviews from "./lib/data/reviews.json";
 import services from "./lib/data/services.json";
 import { AccordionMenu } from "./ui/components/AccordionMenu/AccordionMenu";
+import { Carousel } from "./ui/components/Carousel/Carousel";
 import { Title } from "./ui/components/Title/Title";
 
 export default function Home() {
@@ -86,10 +88,21 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <Title textAlign="text-left" size="text-2xl">
+        <Title textAlign="text-center" size="text-5xl">
           Najczęściej zadawane pytania przez pacjentów
         </Title>
         <AccordionMenu faq={faq} />
+      </section>
+      <section className="overflow-x-hidden relative">
+        <Title textAlign="text-center" size="text-5xl">
+          Satysfakcja Naszych Klientów
+        </Title>
+        <p>
+          Odkryj, co nasi pacjenci mówią o naszym podejściu i dlaczego warto nam
+          zaufać. Dołącz do grona zadowolonych użytkowników i ciesz się
+          kompleksową opieką zdrowotną, jakiej zasługujesz.
+        </p>
+        <Carousel reviews={reviews} />
       </section>
     </>
   );
