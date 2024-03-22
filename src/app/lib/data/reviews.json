@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "name": "Viezh Robert",
+    "description": "Nigdy nie byłem bardziej zadowolony z obsługi medycznej. Dzięki temu portalowi zaoszczędziłem mnóstwo czasu. Polecam każdemu!",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/avatar-1.svg"
+  },
+  {
+    "id": "2",
+    "name": "Viezh Robert",
+    "description": "Nigdy nie byłem bardziej zadowolony z obsługi medycznej. Dzięki temu portalowi zaoszczędziłem mnóstwo czasu. Polecam każdemu!",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/avatar-1.svg"
+  },
+  {
+    "id": "3",
+    "name": "Viezh Robert",
+    "description": "Nigdy nie byłem bardziej zadowolony z obsługi medycznej. Dzięki temu portalowi zaoszczędziłem mnóstwo czasu. Polecam każdemu!",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/avatar-1.svg"
+  },
+  {
+    "id": "4",
+    "name": "Viezh Robert",
+    "description": "Nigdy nie byłem bardziej zadowolony z obsługi medycznej. Dzięki temu portalowi zaoszczędziłem mnóstwo czasu. Polecam każdemu!",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/avatar-1.svg"
+  },
+  {
+    "id": "5",
+    "name": "Viezh Robert",
+    "description": "Nigdy nie byłem bardziej zadowolony z obsługi medycznej. Dzięki temu portalowi zaoszczędziłem mnóstwo czasu. Polecam każdemu!",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/avatar-1.svg"
+  },
+  {
+    "id": "6",
+    "name": "Viezh Robert",
+    "description": "Nigdy nie byłem bardziej zadowolony z obsługi medycznej. Dzięki temu portalowi zaoszczędziłem mnóstwo czasu. Polecam każdemu!",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/avatar-1.svg"
+  }
+]
