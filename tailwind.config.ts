@@ -17,7 +17,7 @@ const config: Config = {
       "medium-gray": "#B9B9B9",
       "light-violet": "#DED4E3",
       "dark-blue": "#25305E",
-      "medium-blue": "#25305E",
+      "medium-blue": "#578DB0",
       "light-blue": "#62BDD6",
       alert: "#dc2626",
       black: "#000",
