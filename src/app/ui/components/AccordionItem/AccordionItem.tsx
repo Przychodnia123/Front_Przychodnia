@@ -16,27 +16,33 @@ export const AccordionItem = ({ answer, question, id }: AccordionItemProps) => {
     <div className="py-2">
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
-        className="flex justify-between w-full p-4 bg-white  rounded-lg "
+        className="flex justify-between w-full py-6 px-10 bg-white border-b-[3px] border-b-light-violet  rounded-lg "
       >
-        <span>{question}</span>
+        <span className="text-2xl">{question}</span>
         {accordionOpen ? (
           <span>
-            <KeyboardArrowUpRoundedIcon sx={{ color: "#25305E" }} />
+            <KeyboardArrowUpRoundedIcon
+              fontSize="large"
+              sx={{ color: "#25305E" }}
+            />
           </span>
         ) : (
           <span>
-            <KeyboardArrowDownRoundedIcon sx={{ color: "#25305E" }} />
+            <KeyboardArrowDownRoundedIcon
+              fontSize="large"
+              sx={{ color: "#25305E" }}
+            />
           </span>
         )}
       </button>
       <div
         className={`grid overflow-hidden transition-all duration-300 ease-in-out text-sm ${
           accordionOpen
-            ? "grid-rows-[1fr] opacity-100"
+            ? "grid-rows-[1fr] opacity-100 p-7"
             : "grid-rows-[0fr] opacity-0"
         }`}
       >
-        <div className="overflow-hidden">{answer}</div>
+        <div className={`overflow-hidden text-lg`}>{answer}</div>
       </div>
     </div>
   );
