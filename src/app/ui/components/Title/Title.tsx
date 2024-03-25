@@ -10,7 +10,9 @@ export const Title = ({
   textAlign = "text-left",
 }: TitleProps) => {
   return (
-    <h2 className={`${size} ${textAlign} font-semibold text-dark-blue`}>
+    <h2
+      className={`${size} laptop:${textAlign}  font-semibold text-center text-dark-blue`}
+    >
       {children}
     </h2>
   );

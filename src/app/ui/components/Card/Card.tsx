@@ -1,17 +1,14 @@
 import { ReactNode } from "react";
 
-export type CardProps = {
-  children: ReactNode;
-  paddingX?: number;
-  paddingY?: number;
+type CardProps = {
+  children?: ReactNode;
+  paddingX?: "sm" | "md";
 };
 
-export const Card = ({ children, paddingX, paddingY }: CardProps) => {
-  const px = paddingX?.toString();
-  const py = paddingY?.toString();
-
+export const Card = ({ children, paddingX = "sm" }: CardProps) => {
+  const cardPadding = paddingX === "sm" ? "px-5" : "px-14";
   return (
-    <div className={`px-[${px}px] py-[${py}px] bg-white shadow-lg rounded-md`}>
+    <div className={`px-14 py-14 bg-white shadow-lg rounded-md`}>
       {children}
     </div>
   );
