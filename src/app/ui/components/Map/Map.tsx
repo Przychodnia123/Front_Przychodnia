@@ -1,22 +1,7 @@
 "use client";
 
 import { Wrapper } from "@googlemaps/react-wrapper";
-import React, { useEffect, useRef, useState } from "react";
-
-export const addSingleMarkers = ({
-  locations,
-  map,
-}: {
-  locations: ReadonlyArray<google.maps.LatLngLiteral>;
-  map: google.maps.Map | null | undefined;
-}) =>
-  locations.map(
-    (position) =>
-      new google.maps.Marker({
-        position,
-        map,
-      })
-  );
+import React, { useEffect, useRef } from "react";
 
 export const GoogleMapsWrapper = ({
   children,
@@ -52,20 +37,13 @@ export const GoogleMaps = ({
         center: DEFAULT_CENTER,
         zoom: DEFAULT_ZOOM,
       });
-      addSingleMarkers({ locations, map });
     }
   }, [ref]);
 
   return <div ref={ref} style={{ width: "100%", height: "100%" }} />;
 };
 
-export const LOCATIONS = [
-  { lat: 48.8566, lng: 2.3522 },
-  { lat: 47.1533, lng: 2.9123 },
-];
-
 export const MapComponent = () => {
-  const [locations, setLocations] = useState("");
   const cities = [
     {
       name: "Warszawa",
@@ -79,24 +57,29 @@ export const MapComponent = () => {
     },
   ];
 
-  const handleSelect = (city: string) => {
-    setLocations(city);
-  };
-  console.log(locations);
   return (
     <>
       <div className=" w-full laptop:w-1/4  flex flex-col items-center px-8 py-8">
-        <div className="relative h-10 w-3/4 min-w-[200px]">
-          <select
-            onChange={(e) => handleSelect(e.target.value)}
-            className="peer flex items-center h-full w-full rounded-[7px] bg-light-gray px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-          >
+        <div className="relative h-10 w-3/4 min-w-[200px] space-y-5">
+          <select className="peer flex items-center h-full w-full rounded-[7px] bg-light-gray px-3 py-2.5 text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
             {cities.map((city) => (
               <option key={city.name} defaultChecked value={city.name}>
                 {city.name}
               </option>
             ))}
           </select>
+          {cities.map((city) => (
+            <div
+              className="border-[1px] hidden laptop:block rounded-md p-5 border-medium-gray"
+              key={city.name}
+            >
+              <p className="text-dark-blue text-lg font-medium">
+                {city.locations[0].street}
+              </p>
+              <p className="font-bold text-lg">Godziny Otwarcia:</p>
+              <p>{city.locations[0].openingHours}</p>
+            </div>
+          ))}
         </div>
       </div>
       <GoogleMapsWrapper>
