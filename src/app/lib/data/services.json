@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Skierowanie na Badania Podstawowe:",
+    "description": "Złóż prośbę online, otrzymaj skierowanie szybko i sprawnie, bez zbędnych formalności.",
+    "image": "/homepage-assets/icons/medical-report2.svg"
+  },
+  {
+    "id": "2",
+    "title": "E-Porady na Żądanie:",
+    "description": "Umów wizytę online, skonsultuj się z lekarzem bez wychodzenia z domu - dostępność 24/7.",
+    "image": "/homepage-assets/icons/doctor1.svg"
+  },
+  {
+    "id": "3",
+    "title": "Wizyta Kontraktowa:",
+    "description": "Zarezerwuj spotkanie z lekarzem osobiście w komfortowym środowisku naszych placówek.",
+    "image": "/homepage-assets/icons/consultation1.svg"
+  },
+  {
+    "id": "4",
+    "title": "Wizyta Domowa - Opieka w Twoim Domu:",
+    "description": "Dostarczamy opiekę medyczną prosto do Twojego domu, kiedy tego potrzebujesz.",
+    "image": "/homepage-assets/icons/house.svg"
+  },
+  {
+    "id": "5",
+    "title": "Wystawienie Recepty Online:",
+    "description": "Złóż prośbę o receptę, a my zadbanie o to, aby była gotowa do odbioru w najbliższej aptece.",
+    "image": "/homepage-assets/icons/online-appointment1.svg"
+  },
+  {
+    "id": "6",
+    "title": "Akceptacja Wniosków Bez Oczekiwania:",
+    "description": "Lekarze mają dostęp do Twojej historii medycznej, a wnioski o skierowania czy recepty są akceptowane niemal natychmiast.",
+    "image": "/homepage-assets/icons/online-appointment2.svg"
+  }
+]
