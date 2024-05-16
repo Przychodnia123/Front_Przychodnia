@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const MainSection = () => {
   return (
-    <section className="w-full px-5 laptop:px-20 desktop:px-40 py-20 laptop:py-24 flex flex-col-reverse laptop:flex-row gap-y-10">
+    <section className="w-full px-5 laptop:px-20 laptop:py-24 desktop:px-40 py-20 flex flex-col-reverse laptop:flex-row gap-y-10">
       <div className="w-full laptop:w-1/2 flex flex-col justify-center items-center laptop:items-start gap-y-14">
         <Title size="text-6xl">Twoje Zdrowie, Nasza Troska</Title>
         <p className="text-lg text-center laptop:text-left">
