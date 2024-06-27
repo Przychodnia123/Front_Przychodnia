@@ -1,4 +1,4 @@
-import { Button } from "@/src/app/utilities/Button";
+import { Button } from "@utilities/Button";
 import Image from "next/image";
 
 export const CTASection = () => {

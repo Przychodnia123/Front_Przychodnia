@@ -1,5 +1,5 @@
-import { MapComponent } from "@/src/app/(routes)/(homepage)/_MapSection/Map";
-import { Title } from "@/src/app/utilities/Title";
+import { MapComponent } from "@homepage/_MapSection/Map";
+import { Title } from "@utilities/Title";
 
 export const MapSection = () => {
   return (

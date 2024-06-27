@@ -1,6 +1,6 @@
-import { AccordionMenu } from "@/src/app/(routes)/(homepage)/_FAQSection/AccordionMenu";
-import { Title } from "@/src/app/utilities/Title";
+import { AccordionMenu } from "@homepage/_FAQSection/AccordionMenu";
 import faq from "@lib/data/faq.json";
+import { Title } from "@utilities/Title";
 
 export const FAQSection = () => {
   return (

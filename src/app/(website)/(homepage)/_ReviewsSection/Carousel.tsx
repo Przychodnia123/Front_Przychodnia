@@ -1,9 +1,9 @@
 "use client";
 
-import { Review } from "@/src/app/(routes)/(homepage)/_ReviewsSection/types";
-import { Card } from "@/src/app/utilities/Card";
+import { Review } from "@homepage/_ReviewsSection/types";
 import ArrowBackIcon from "@mui/icons-material/ArrowBackRounded";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForwardRounded";
+import { Card } from "@utilities/Card";
 import Image from "next/image";
 import { useRef } from "react";
 import { Swiper as SwiperType } from "swiper";

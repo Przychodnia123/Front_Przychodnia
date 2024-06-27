@@ -1,5 +1,5 @@
-import { Button } from "@/src/app/utilities/Button";
-import { Title } from "@/src/app/utilities/Title";
+import { Button } from "@utilities/Button";
+import { Title } from "@utilities/Title";
 import Image from "next/image";
 import Link from "next/link";
 

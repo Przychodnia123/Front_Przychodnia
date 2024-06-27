@@ -1,6 +1,6 @@
 "use client";
 
-import { AccordionItemProps } from "@/src/app/(routes)/(homepage)/_FAQSection/types";
+import { AccordionItemProps } from "@homepage/_FAQSection/types";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 import { useState } from "react";

@@ -1,12 +1,11 @@
 "use client";
 
-import { Button } from "@/src/app/utilities/Button";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-
-import { useOutsideClick } from "@/src/app/lib/data/hooks/useClickOutside";
-import { HamburgerMenu } from "@/src/app/utilities/HamburgerMenu";
-import { Menu } from "@/src/app/utilities/Menu";
+import { Button } from "@utilities/Button";
+import { useOutsideClick } from "@lib/hooks/useClickOutside";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import { HamburgerMenu } from "@utilities/HamburgerMenu";
+import { Menu } from "@utilities/Menu";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";

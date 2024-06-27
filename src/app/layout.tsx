@@ -1,6 +1,4 @@
 import "@/src/app/globals.css";
-import { Footer } from "@/src/app/utilities/Footer";
-import { Navigation } from "@/src/app/utilities/Navigation";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
@@ -22,10 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} bg-light-gray`}>
-        <Navigation />
+      <body className={`${roboto.className} bg-light-gray w-full h-full`}>
         {children}
-        <Footer />
       </body>
     </html>
   );

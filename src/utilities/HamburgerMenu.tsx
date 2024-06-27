@@ -1,7 +1,7 @@
-import { useOutsideClick } from "@/src/app/lib/data/hooks/useClickOutside";
-import { Menu } from "@/src/app/utilities/Menu";
+import { useOutsideClick } from "@lib/hooks/useClickOutside";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import { Menu } from "@utilities/Menu";
 import { useState } from "react";
 
 export const HamburgerMenu = () => {
