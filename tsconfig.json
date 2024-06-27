@@ -23,7 +23,8 @@
       "@app/*": ["src/app/*"],
       "@utilities/*": ["src/utilities/*"],
       "@lib/*": ["src/lib/*"],
-      "@homepage/*": ["src/app/(website)/(homepage)/*"]
+      "@homepage/*": ["src/app/(website)/(homepage)/*"],
+      "@auth/*": ["src/app/(auth)/*"]
     }
   },
   "include": [
