@@ -1,6 +1,6 @@
 type Props = {
   children: string;
-  size: "sm" | "md" | "text-2xl" | "text-6xl" | "text-5xl";
+  size: "text-sm" | "text-md" | "text-2xl" | "text-6xl" | "text-5xl";
   textAlign?: "text-center" | "text-left";
 };
 

@@ -1,6 +1,6 @@
-import { Carousel } from "@/src/app/(routes)/(homepage)/_ReviewsSection/Carousel";
-import { Title } from "@/src/app/utilities/Title";
+import { Carousel } from "@homepage/_ReviewsSection/Carousel";
 import reviews from "@lib/data/reviews.json";
+import { Title } from "@utilities/Title";
 
 export const ReviewsSection = () => {
   return (
