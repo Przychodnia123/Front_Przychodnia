@@ -1,11 +1,11 @@
 import { ButtonHTMLAttributes } from "react";
 
-type Props = {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   text: string;
   type?: string;
   bg?: "dark-blue" | "white";
   textColor: "dark-blue" | "white";
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+};
 
 export const Button = ({ text, bg, textColor, type, ...props }: Props) => {
   return (

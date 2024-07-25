@@ -1,43 +1,26 @@
-import { ErrorMessage, Field } from "formik";
+import { forwardRef, InputHTMLAttributes } from "react";
+import { FieldError } from "react-hook-form";
 
-type Props = {
-  type: string;
-  value?: string;
-  name: string;
-  id?: string;
-  placeholder?: string;
+type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  onChange: (e: React.ChangeEvent<any>) => void;
-};
+  error?: FieldError;
+}
 
-export const Input = ({
-  value,
-  type,
-  name,
-  label,
-  placeholder,
-  id,
-  ...props
-}: Props) => {
-  return (
-    <div className="flex flex-col gap-y-3">
-      <label htmlFor={id}>{label}</label>
-      <Field
+export const Input = forwardRef<HTMLInputElement, Props>(({ label, error, ...props }, ref) => (
+  <div>
+      <label htmlFor={props.id}>{label}</label>
+       <input
         className="w-full border
              border-light-gray
          rounded-md border-1  px-3.5 py-2 text-black shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:outline-dark-blue"
-        placeholder={placeholder}
-        type={type}
-        name={name}
-        id={id}
-        value={value}
+        placeholder={props.placeholder}
+        type={props.type}
+        ref={ref}
+        id={props.id}
         {...props}
       />
-      <ErrorMessage
-        className="text-alert text-xs"
-        name={name}
-        component="div"
-      />
-    </div>
-  );
-};
+      {error && <span>{error.message}</span>}
+  </div>
+));
+
+Input.displayName = 'Input';
