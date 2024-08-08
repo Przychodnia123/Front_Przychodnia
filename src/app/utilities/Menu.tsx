@@ -23,7 +23,7 @@ export const Menu = ({ mobile }: Props) => {
         <Link href="/services">Usługi</Link>
       </li>
       <li>
-        <Link href="/news">Aktualnośći</Link>
+        <Link href="/news">Aktualności</Link>
       </li>
       <li>
         <Link href="/contact">Kontakt</Link>
