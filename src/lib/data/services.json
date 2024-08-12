@@ -13,7 +13,7 @@
   },
   {
     "id": "3",
-    "title": "Wizyta Kontraktowa:",
+    "title": "Wizyta stacjonarna:",
     "description": "Zarezerwuj spotkanie z lekarzem osobiście w komfortowym środowisku naszych placówek.",
     "image": "/homepage-assets/icons/consultation1.svg"
   },
@@ -26,7 +26,7 @@
   {
     "id": "5",
     "title": "Wystawienie Recepty Online:",
-    "description": "Złóż prośbę o receptę, a my zadbanie o to, aby była gotowa do odbioru w najbliższej aptece.",
+    "description": "Złóż prośbę o receptę, a my zadbamy o to, aby była gotowa do odbioru w najbliższej aptece.",
     "image": "/homepage-assets/icons/online-appointment1.svg"
   },
   {
