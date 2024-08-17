@@ -6,14 +6,14 @@ export const OfferSection = () => {
   return (
     <section className="px-5 laptop:px-20 desktop:px-40 py-20 laptop:py-24 space-y-14 laptop:space-y-28">
       <Title textAlign="text-center" size="text-5xl">
-        W Czym Możemy Pomóc
+        W czym możemy pomóc
       </Title>
 
-      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 laptop:gap-10 desktop:gap-32">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-5 desktop:gap-24">
         {services.map((service) => (
           <div
             key={service.id}
-            className="bg-white flex flex-col gap-y-6 px-14 py-10 rounded-md shadow-md hover:shadow-xl hover:-translate-y-3 duration-200"
+            className="bg-white flex flex-col gap-y-6 px-14 py-10 laptop:px-7 rounded-md shadow-md hover:shadow-xl hover:-translate-y-3 duration-200"
           >
             <Image
               className="self-center"

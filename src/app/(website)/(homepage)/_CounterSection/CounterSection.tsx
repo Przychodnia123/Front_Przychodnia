@@ -5,7 +5,7 @@ export const CounterSection = () => {
         <h2 className="font-semibold text-center text-dark-blue text-2xl">
           Ponad{" "}
           <span className="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-visits)] before:content-[counter(num)]">
-            <span className="sr-only">1000</span> Zrealizowanych Wizyt
+            <span className="sr-only">1000</span> zrealizowanych wizyt
           </span>
         </h2>
         <h2 className="font-semibold text-center text-dark-blue text-2xl">
@@ -15,7 +15,7 @@ export const CounterSection = () => {
         </h2>
         <h2 className="font-semibold text-center text-dark-blue text-2xl">
           <span className="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-access)] before:content-[counter(num)]">
-            <span className="sr-only">24</span>/7 Dostęp do Opieki Medycznej
+            <span className="sr-only">24</span>/7 dostęp do opieki medycznej
           </span>
         </h2>
       </div>

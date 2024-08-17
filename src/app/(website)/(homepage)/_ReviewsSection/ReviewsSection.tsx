@@ -4,10 +4,10 @@ import { Title } from "@utilities/Title";
 
 export const ReviewsSection = () => {
   return (
-    <section className="overflow-x-hidden relative space-y-14 laptop:space-y-28">
+    <section className="overflow-x-hidden relative space-y-14 laptop:space-y-28 mb-24">
       <div className="space-y-5">
         <Title textAlign="text-center" size="text-5xl">
-          Satysfakcja Naszych Klientów
+        Opinie naszych użytkowników
         </Title>
         <p className="text-center mb-28">
           Odkryj, co nasi pacjenci mówią o naszym podejściu i dlaczego warto nam

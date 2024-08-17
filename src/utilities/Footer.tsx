@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="space-y-4 w-full text-center laptop:text-left laptop:w-1/2">
           <p className="font-bold text-3xl">e-przychodnia</p>
           <p>
-            Odkryj nowy wymiar opieki zdrowotnej online dzięki E-Przychodni -
+            Odkryj nowy wymiar opieki zdrowotnej online dzięki E-przychodni -
             szybko, wygodnie i bezpiecznie.
           </p>
         </div>

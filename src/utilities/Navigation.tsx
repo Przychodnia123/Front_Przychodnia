@@ -57,7 +57,7 @@ export const Navigation = () => {
           <ShoppingCartRoundedIcon fontSize="large" />
         </div>
         <div className="hidden laptop:flex">
-          <Button bg="dark-blue" textColor="white" text="Lorem Ipsum" />
+          <Button bg="dark-blue" textColor="white" text="Zaloguj się" />
         </div>
         <HamburgerMenu />
       </div>

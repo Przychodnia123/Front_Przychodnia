@@ -27,7 +27,7 @@ export const SignUpForm = () => {
             placeholder="Nazwa użytkownika"
             id="username"
             {...register('username')}
-                error={errors.username}
+            error={errors.username}
           />        
           <Input
             type="email"
@@ -35,7 +35,7 @@ export const SignUpForm = () => {
             placeholder="example@example.com"
             id="email"
             {...register('email')}
-                error={errors.email}
+            error={errors.email}
           />       
           <Input
             type="password"
@@ -43,7 +43,7 @@ export const SignUpForm = () => {
             placeholder="********"
             id="password"
             {...register('password')}
-                error={errors.password}
+            error={errors.password}
           />        
           <Input
             type="password"
@@ -51,7 +51,7 @@ export const SignUpForm = () => {
             placeholder="********"
             id="password2"
             {...register('password2')}
-                error={errors.password2}
+            error={errors.password2}
           />      
           <Button textColor="white" bg="dark-blue" text="Zarejestruj się" type="submit" />
         </form>
