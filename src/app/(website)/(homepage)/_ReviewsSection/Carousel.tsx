@@ -47,6 +47,7 @@ export const Carousel = ({ reviews }: Props) => {
             <Card>
               <div className="space-y-5">
                 <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
                   <Image
                     src={review.image}
                     alt={review.name}
@@ -57,7 +58,7 @@ export const Carousel = ({ reviews }: Props) => {
                     <p className="font-medium text-lg">{review.name}</p>
                     <p className="text-medium-blue">{review.location}</p>
                   </div>
-
+                  </div>
                   <p className="text-medium-blue">{review.rate}</p>
                 </div>
                 <div>
