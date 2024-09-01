@@ -27,7 +27,7 @@ export const SignInForm = () => {
             placeholder="example@example.com"
             id="email"
             {...register('email')}
-                error={errors.email}
+            error={errors.email}
           />       
           <Input
             type="password"
@@ -35,7 +35,7 @@ export const SignInForm = () => {
             placeholder="********"
             id="password"
             {...register('password')}
-                error={errors.password}
+            error={errors.password}
           />           
           <Button textColor="white" bg="dark-blue" text="Zarejestruj się" type="submit" />
         </form>
