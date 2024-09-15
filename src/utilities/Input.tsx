@@ -19,7 +19,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(({ label, error, ...pro
         id={props.id}
         {...props}
       />
-      {error && <span>{error.message}</span>}
+      {error && <span className="text-alert text-xs">{error.message}</span>}
   </div>
 ));
 

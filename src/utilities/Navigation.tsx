@@ -57,7 +57,7 @@ export const Navigation = () => {
           <ShoppingCartRoundedIcon fontSize="large" />
         </div>
         <div className="hidden laptop:flex">
-          <Button bg="dark-blue" textColor="white" text="Zaloguj się" />
+          <Link className="bg-dark-blue text-white px-10 py-5 rounded-xl font-medium inline-flex items-center justify-center shadow-md" href="/sign-in">Zaloguj się</Link>
         </div>
         <HamburgerMenu />
       </div>

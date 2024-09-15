@@ -12,11 +12,9 @@ export const MainSection = () => {
         Znajdź najnowsze i najbardziej innowacyjne rozwiązania w opiece zdrowotnej. Złóż prośbę o skierowanie na badania podstawowe, umów wizytę online, zamów e-receptę – wszystko w jednym miejscu. Dołącz do nas już dziś i zacznij z nami dbać o swoje zdrowie!
         </p>
         <div className="flex flex-col tablet:flex-row items-center gap-5">
-          <Button
-            textColor="white"
-            bg="dark-blue"
-            text="Zarejestruj się teraz"
-          />
+          <Link href="/sign-up"
+          className="bg-dark-blue text-white px-10 py-5 rounded-xl font-medium inline-flex items-center justify-center shadow-md"
+          >Zarejestruj się teraz</Link>
           <p>
             Masz już konto?{" "}
             <Link className="text-light-blue font-medium" href={"/"}>
