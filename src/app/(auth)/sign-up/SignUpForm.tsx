@@ -31,7 +31,7 @@ export const SignUpForm = () => {
           />        
           <Input
             type="email"
-            label="Adres Email"
+            label="Adres e-mail"
             placeholder="example@example.com"
             id="email"
             {...register('email')}
@@ -47,12 +47,15 @@ export const SignUpForm = () => {
           />        
           <Input
             type="password"
-            label="Powtórz Hasło"
+            label="Powtórz hasło"
             placeholder="********"
             id="password2"
             {...register('password2')}
             error={errors.password2}
-          />      
+          />
+          <div>
+            <label><input required type="checkbox" /><span className="ml-2">Akceptuję regulamin</span></label>
+          </div>
           <Button textColor="white" bg="dark-blue" text="Zarejestruj się" type="submit" />
         </form>
   );

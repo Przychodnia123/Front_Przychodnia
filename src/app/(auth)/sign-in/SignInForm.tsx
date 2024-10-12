@@ -5,6 +5,7 @@ import { Button } from "@utilities/Button";
 import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>;
 
@@ -23,7 +24,7 @@ export const SignInForm = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="py-10 space-y-5 w-full h-full tablet:h-auto flex flex-col">    
           <Input
             type="email"
-            label="Adres Email"
+            label="Adres e-mail"
             placeholder="example@example.com"
             id="email"
             {...register('email')}
@@ -36,7 +37,11 @@ export const SignInForm = () => {
             id="password"
             {...register('password')}
             error={errors.password}
-          />           
+          /> 
+           <div className="flex justify-between">
+            <label><input required type="checkbox" /><span className="ml-2">Zapamiętaj hasło</span></label>
+            <Link className="text-light-blue" href="/">Nie pamiętasz hasła?</Link>
+          </div>          
           <Button textColor="white" bg="dark-blue" text="Zarejestruj się" type="submit" />
         </form>
   );

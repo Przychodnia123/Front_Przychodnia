@@ -10,9 +10,7 @@ export const ReviewsSection = () => {
         Opinie naszych użytkowników
         </Title>
         <p className="text-center mb-28">
-          Odkryj, co nasi pacjenci mówią o naszym podejściu i dlaczego warto nam
-          zaufać. Dołącz do grona zadowolonych użytkowników i ciesz się
-          kompleksową opieką zdrowotną, jakiej zasługujesz.
+        Odkryj, co nasi pacjenci mówią o naszym podejściu i dlaczego warto nam zaufać. Dołącz do grona zadowolonych użytkowników i ciesz się kompleksową opieką zdrowotną na jaką zasługujesz.
         </p>
       </div>
       <Carousel reviews={reviews} />

@@ -14,10 +14,10 @@ export const Menu = ({ mobile }: Props) => {
       }  text-dark-blue font-semibold`}
     >
       <li>
-        <Link href="/">Strona Główna</Link>
+        <Link href="/">Strona główna</Link>
       </li>
       <li>
-        <Link href="/about">O Nas</Link>
+        <Link href="/about">O nas</Link>
       </li>
       <li>
         <Link href="/services">Usługi</Link>

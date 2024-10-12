@@ -1,13 +1,13 @@
 [
   {
     "id": "1",
-    "question": "Jak mogę umówić się na spotkanie w e-poradni?",
-    "answer": "Aby umówić się na spotkanie, wystarczy zarejestrować się na naszej platformie i wybrać dostępnego lekarza oraz termin, który odpowiada Twoim preferencjom."
+    "question": "Jak mogę umówić się na wizytę w e-przychodni?",
+    "answer": "Aby umówić się na wizytę, wystarczy zarejestrować się na naszej platformie i wybrać dostępnego lekarza oraz termin, który odpowiada Twoim preferencjom."
   },
   {
     "id": "2",
     "question": "Jak złożyć prośbę o skierowanie online?",
-    "answer": "Proces jest prosty! Po zarejestrowaniu się kliknij zakładkę 'Skierowanie' i postępuj zgodnie z instrukcjami."
+    "answer": "Proces jest prosty! Po zarejestrowaniu się na naszej platformie kliknij zakładkę 'Skierowanie' i postępuj zgodnie z instrukcjami"
   },
   {
     "id": "3",

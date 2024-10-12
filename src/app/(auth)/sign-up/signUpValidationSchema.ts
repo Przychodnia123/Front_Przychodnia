@@ -6,7 +6,7 @@ export const SignUpValidationSchema = z
       .string()
       .min(3, "Nazwa użytkownika musi mieć co najmniej 3 znaki")
       .max(20, "Nazwa użytkownika musi mieć co najwyżej 20 znaków"),
-    email: z.string().email("Nieprawidłowy adres email"),
+    email: z.string().email("Nieprawidłowy adres e-mail"),
     password: z.string().min(8, "Hasło musi mieć co najmniej 8 znaków"),
     password2: z.string(),
   })
