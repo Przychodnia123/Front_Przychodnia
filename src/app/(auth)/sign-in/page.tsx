@@ -9,7 +9,7 @@ export default function SignIn() {
       <Image src="/nav-assets/logo.png" alt="Logo" width={208} height={71} />
       <Title size="text-5xl">Zaloguj się</Title>
       <SignInForm />
-      <p>Nie masz konta?<Link className="text-light-blue ml-3" href={'/sign-in'}>Zaloguj się</Link></p>
+      <p>Nie masz konta?<Link className="text-light-blue ml-3" href={'/sign-in'}>Zarejestruj się</Link></p>
     </div>
   );
 }
