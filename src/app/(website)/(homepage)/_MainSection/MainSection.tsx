@@ -17,7 +17,7 @@ export const MainSection = () => {
           >Zarejestruj się teraz</Link>
           <p>
             Masz już konto?{" "}
-            <Link className="text-light-blue font-medium" href={"/"}>
+            <Link className="text-light-blue font-medium" href="/sign-in">
               Zaloguj się!
             </Link>
           </p>
