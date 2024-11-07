@@ -5,6 +5,8 @@ import { Button } from "@utilities/Button";
 import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Label } from "@/src/utilities/Label";
+import { Checkbox } from "@/src/utilities/Checkbox";
 
 type SignUpFormValues = z.infer<typeof SignUpValidationSchema>;
 
@@ -16,47 +18,58 @@ export const SignUpForm = () => {
   } = useForm<SignUpFormValues>({ resolver: zodResolver(SignUpValidationSchema) });
 
   const onSubmit: SubmitHandler<SignUpFormValues> = (values) => {
+    console.log('values', values)
     // TODO: Handle form submission, e.g., send data to an API
   }
 
   return (
-        <form onSubmit={handleSubmit(onSubmit)} className="py-10 space-y-5 w-full h-full tablet:h-auto flex flex-col">
-          <Input
-            type="text"
-            label="Nazwa użytkownika"
-            placeholder="Nazwa użytkownika"
-            id="username"
-            {...register('username')}
-            error={errors.username}
-          />        
-          <Input
-            type="email"
-            label="Adres e-mail"
-            placeholder="example@example.com"
-            id="email"
-            {...register('email')}
-            error={errors.email}
-          />       
-          <Input
-            type="password"
-            label="Hasło"
-            placeholder="********"
-            id="password"
-            {...register('password')}
-            error={errors.password}
-          />        
-          <Input
-            type="password"
-            label="Powtórz hasło"
-            placeholder="********"
-            id="password2"
-            {...register('password2')}
-            error={errors.password2}
-          />
-          <div>
-            <label><input required type="checkbox" /><span className="ml-2">Akceptuję regulamin</span></label>
+        <form noValidate onSubmit={handleSubmit(onSubmit)} className="py-10 w-full h-full tablet:h-auto flex flex-col">
+          <div className="mb-5">
+            <Label>Nazwa użytkownika</Label>
+            <Input
+              type="text"
+              placeholder="Nazwa użytkownika"
+              id="username"
+              {...register('username')}
+              error={errors.username}
+            />  
           </div>
-          <Button textColor="white" bg="dark-blue" text="Zarejestruj się" type="submit" />
+          <div className="mb-5">
+            <Label>Adres e-mail</Label>
+            <Input
+              type="email"
+              placeholder="example@example.com"
+              id="email"
+              {...register('email')}
+              error={errors.email}
+            />   
+          </div>
+          <div className="mb-5">
+            <Label>Hasło</Label>    
+            <Input
+              type="password"
+              placeholder="********"
+              id="password"
+              {...register('password')}
+              error={errors.password}
+            />  
+          </div>
+          <div className="mb-5">
+            <Label>Powtórz hasło</Label>      
+            <Input
+              type="password"
+              placeholder="********"
+              id="password2"
+              {...register('password2')}
+              error={errors.password2}
+            />
+          </div>
+          <Checkbox
+            id="terms"
+            label="Akceptuję regulamin"
+            {...register('terms')}
+            error={errors.terms} />
+          <Button textColor="white" bg="dark-blue" text="Zarejestruj się" type="submit" className="mt-5" />
         </form>
   );
 };
