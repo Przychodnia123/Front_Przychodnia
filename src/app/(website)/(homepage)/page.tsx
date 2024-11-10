@@ -6,6 +6,8 @@ import { OfferSection } from "@homepage/_OfferSection/OfferSection";
 import { ReviewsSection } from "@homepage/_ReviewsSection/ReviewsSection";
 
 export default function Home() {
+  console.log('javac test');
+
   return (
     <>
       <MainSection />
