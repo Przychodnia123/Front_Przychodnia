@@ -14,62 +14,74 @@ export const SignUpForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
-  } = useForm<SignUpFormValues>({ resolver: zodResolver(SignUpValidationSchema) });
+    formState: { errors },
+  } = useForm<SignUpFormValues>({
+    resolver: zodResolver(SignUpValidationSchema),
+  });
 
   const onSubmit: SubmitHandler<SignUpFormValues> = (values) => {
-    console.log('values', values)
     // TODO: Handle form submission, e.g., send data to an API
-  }
+  };
 
   return (
-        <form noValidate onSubmit={handleSubmit(onSubmit)} className="py-10 w-full h-full tablet:h-auto flex flex-col">
-          <div className="mb-5">
-            <Label>Nazwa użytkownika</Label>
-            <Input
-              type="text"
-              placeholder="Nazwa użytkownika"
-              id="username"
-              {...register('username')}
-              error={errors.username}
-            />  
-          </div>
-          <div className="mb-5">
-            <Label>Adres e-mail</Label>
-            <Input
-              type="email"
-              placeholder="example@example.com"
-              id="email"
-              {...register('email')}
-              error={errors.email}
-            />   
-          </div>
-          <div className="mb-5">
-            <Label>Hasło</Label>    
-            <Input
-              type="password"
-              placeholder="********"
-              id="password"
-              {...register('password')}
-              error={errors.password}
-            />  
-          </div>
-          <div className="mb-5">
-            <Label>Powtórz hasło</Label>      
-            <Input
-              type="password"
-              placeholder="********"
-              id="password2"
-              {...register('password2')}
-              error={errors.password2}
-            />
-          </div>
-          <Checkbox
-            id="terms"
-            label="Akceptuję regulamin"
-            {...register('terms')}
-            error={errors.terms} />
-          <Button textColor="white" bg="dark-blue" text="Zarejestruj się" type="submit" className="mt-5" />
-        </form>
+    <form
+      noValidate
+      onSubmit={handleSubmit(onSubmit)}
+      className="py-10 w-full h-full tablet:h-auto flex flex-col"
+    >
+      <div className="mb-5">
+        <Label>Nazwa użytkownika</Label>
+        <Input
+          type="text"
+          placeholder="Nazwa użytkownika"
+          id="username"
+          {...register("username")}
+          error={errors.username}
+        />
+      </div>
+      <div className="mb-5">
+        <Label>Adres e-mail</Label>
+        <Input
+          type="email"
+          placeholder="example@example.com"
+          id="email"
+          {...register("email")}
+          error={errors.email}
+        />
+      </div>
+      <div className="mb-5">
+        <Label>Hasło</Label>
+        <Input
+          type="password"
+          placeholder="********"
+          id="password"
+          {...register("password")}
+          error={errors.password}
+        />
+      </div>
+      <div className="mb-5">
+        <Label>Powtórz hasło</Label>
+        <Input
+          type="password"
+          placeholder="********"
+          id="password2"
+          {...register("password2")}
+          error={errors.password2}
+        />
+      </div>
+      <Checkbox
+        id="terms"
+        label="Akceptuję regulamin"
+        {...register("terms")}
+        error={errors.terms}
+      />
+      <Button
+        textColor="white"
+        bg="dark-blue"
+        text="Zarejestruj się"
+        type="submit"
+        className="mt-5"
+      />
+    </form>
   );
 };
