@@ -61,7 +61,7 @@ export const SignInForm = () => {
       <Button
         textColor="white"
         bg="dark-blue"
-        text="Zarejestruj się"
+        text="Zaloguj się"
         type="submit"
       />
     </form>
