@@ -51,7 +51,7 @@ export const SignInForm = () => {
       </div>
       <div className="flex justify-between">
         <label>
-          <input required type="checkbox" />
+          <input type="checkbox" />
           <span className="ml-2">Zapamiętaj hasło</span>
         </label>
         <Link className="text-light-blue" href="/">
