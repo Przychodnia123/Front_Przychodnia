@@ -1,5 +1,6 @@
 import { Button } from "@utilities/Button";
 import Image from "next/image";
+import Link from "next/link";
 
 export const CTASection = () => {
   return (
@@ -16,11 +17,9 @@ export const CTASection = () => {
         <p className="text-3xl text-center laptop:text-left">
         Czuj się bezpiecznie i dbaj o swoje zdrowie! Skontaktuj się z nami już teraz! Wspólnie zadbamy o Twoje zdrowie i dobre samopoczucie!
         </p>
-        <Button
-          bg="white"
-          textColor="dark-blue"
-          text="Zarejestruj się na e-wizytę"
-        />
+         <Link href="/sign-in"
+          className="bg-white text-dark-blue px-10 py-5 rounded-xl font-medium inline-flex items-center justify-center shadow-md"
+          >Zarejestruj się na e-wizytę</Link>
       </div>
     </section>
   );
