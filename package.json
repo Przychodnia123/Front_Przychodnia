@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pretty": "prettier --check \"src/**/*.*\"",
+    "pretty-fix": "prettier --write \"src/**/*.*\""
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
