@@ -18,7 +18,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(({ error, label, ...
             className="shadow-none w-auto"
             {...props}
         />
-        <Label>{label}</Label>
+        <Label htmlFor={props.id}>{label}</Label>
     </div>
     {error && <span className="text-alert text-xs mb-2">{error.message}</span>}
     </>

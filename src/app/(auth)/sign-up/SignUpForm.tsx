@@ -30,7 +30,7 @@ export const SignUpForm = () => {
       className="py-10 w-full h-full tablet:h-auto flex flex-col"
     >
       <div className="mb-5">
-        <Label>Nazwa użytkownika</Label>
+        <Label htmlFor="username">Nazwa użytkownika</Label>
         <Input
           type="text"
           placeholder="Nazwa użytkownika"
@@ -40,7 +40,7 @@ export const SignUpForm = () => {
         />
       </div>
       <div className="mb-5">
-        <Label>Adres e-mail</Label>
+        <Label htmlFor="email">Adres e-mail</Label>
         <Input
           type="email"
           placeholder="example@example.com"
@@ -50,7 +50,7 @@ export const SignUpForm = () => {
         />
       </div>
       <div className="mb-5">
-        <Label>Hasło</Label>
+        <Label htmlFor="password">Hasło</Label>
         <Input
           type="password"
           placeholder="********"
@@ -60,7 +60,7 @@ export const SignUpForm = () => {
         />
       </div>
       <div className="mb-5">
-        <Label>Powtórz hasło</Label>
+        <Label htmlFor="password2">Powtórz hasło</Label>
         <Input
           type="password"
           placeholder="********"

@@ -30,7 +30,7 @@ export const SignInForm = () => {
       className="py-10 space-y-5 w-full h-full tablet:h-auto flex flex-col"
     >
       <div>
-        <Label>Adres e-mail</Label>
+        <Label htmlFor="email">Adres e-mail</Label>
         <Input
           type="email"
           placeholder="example@example.com"
@@ -40,7 +40,7 @@ export const SignInForm = () => {
         />
       </div>
       <div>
-        <Label>Hasło</Label>
+        <Label htmlFor="password">Hasło</Label>
         <Input
           type="password"
           placeholder="********"
@@ -50,6 +50,8 @@ export const SignInForm = () => {
         />
       </div>
       <div className="flex justify-between">
+        {/* TODO: use Checkbox component */}
+
         <label>
           <input type="checkbox" />
           <span className="ml-2">Zapamiętaj hasło</span>
