@@ -1,8 +1,7 @@
 "use client";
 
 import { AccordionItemProps } from "@homepage/_FAQSection/types";
-import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
-import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 import { useState } from "react";
 
 export const AccordionItem = ({ answer, question, id }: AccordionItemProps) => {
@@ -16,11 +15,11 @@ export const AccordionItem = ({ answer, question, id }: AccordionItemProps) => {
         <span className="text-2xl">{question}</span>
         {accordionOpen ? (
           <span className="text-dark-blue">
-            <KeyboardArrowUpRoundedIcon fontSize="large" />
+            <ChevronUpIcon className="size-8" />
           </span>
         ) : (
           <span className="text-dark-blue">
-            <KeyboardArrowDownRoundedIcon fontSize="large" />
+            <ChevronDownIcon className="size-8" />
           </span>
         )}
       </button>

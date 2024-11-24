@@ -1,8 +1,7 @@
 "use client";
 
 import { Review } from "@homepage/_ReviewsSection/types";
-import ArrowBackIcon from "@mui/icons-material/ArrowBackRounded";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForwardRounded";
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 import { Card } from "@utilities/Card";
 import Image from "next/image";
 import { useRef } from "react";
@@ -69,18 +68,18 @@ export const Carousel = ({ reviews }: Props) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="hidden laptop:flex justify-end px-24">
+      <div className="hidden laptop:flex justify-end px-24 gap-5">
         <button
           className="text-dark-blue"
           onClick={() => swiperRef.current?.slidePrev()}
         >
-          <ArrowBackIcon sx={{ marginRight: "20px" }} />
+          <ArrowLeftIcon className="size-6" />
         </button>
         <button
           className="text-dark-blue"
           onClick={() => swiperRef.current?.slideNext()}
         >
-          <ArrowForwardIcon />
+          <ArrowRightIcon className="size-6" />
         </button>
       </div>
     </>
