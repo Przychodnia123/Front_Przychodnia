@@ -6,13 +6,14 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   type?: string;
   bg?: "dark-blue" | "white";
   textColor: "dark-blue" | "white";
+  classes?: string;
 };
 
-export const Button = ({ text, bg, textColor, type, className, ...props }: Props) => {
+export const Button = ({ text, bg, textColor, type, classes, ...props }: Props) => {
   return (
     <button
       type={type}
-      className={cn(`bg-${bg} text-${textColor} px-10 py-5 rounded-xl font-medium inline-flex items-center justify-center shadow-md`, className)}
+      className={cn(`bg-${bg} text-${textColor} px-10 py-5 rounded-xl font-medium inline-flex items-center justify-center shadow-md`, classes)}
       {...props}
     >
       <span>{text}</span>

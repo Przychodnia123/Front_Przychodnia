@@ -80,7 +80,7 @@ export const SignUpForm = () => {
         bg="dark-blue"
         text="Zarejestruj się"
         type="submit"
-        className="mt-5"
+        classes="mt-5"
       />
     </form>
   );
