@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 @property --num-visits {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
 }
 
 @property --num-patients {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
 }
 
 @property --num-access {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
 }
 
 @keyframes counter {
-  from {
-    --num-visits: 0;
-    --num-patients: 0;
-    --num-access: 0;
-  }
-  to {
-    --num-visits: 1000;
-    --num-patients: 98;
-    --num-access: 24;
-  }
+    from {
+        --num-visits: 0;
+        --num-patients: 0;
+        --num-access: 0;
+    }
+    to {
+        --num-visits: 1000;
+        --num-patients: 98;
+        --num-access: 24;
+    }
 }
