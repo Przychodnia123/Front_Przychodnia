@@ -14,8 +14,9 @@ export const CounterSection = () => {
           </span>
         </h2>
         <h2 className="font-semibold text-center text-dark-blue text-2xl">
+          <span>Dostęp do opieki medycznej </span>
           <span className="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-access)] before:content-[counter(num)]">
-            <span className="sr-only">Dostęp do opieki medycznej 24</span>/7
+            <span className="sr-only"> 24</span> /7
           </span>
         </h2>
       </div>
