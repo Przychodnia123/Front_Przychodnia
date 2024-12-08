@@ -1,9 +1,8 @@
 "use client";
 
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import { UserCircleIcon, ShoppingCartIcon } from '@heroicons/react/24/solid'
 import { Button } from "@utilities/Button";
 import { useOutsideClick } from "@lib/hooks/useClickOutside";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import { HamburgerMenu } from "@utilities/HamburgerMenu";
 import { Menu } from "@utilities/Menu";
 import Image from "next/image";
@@ -35,7 +34,7 @@ export const Navigation = () => {
           onClick={handleClick}
           className="text-dark-blue relative"
         >
-          <AccountCircleRoundedIcon fontSize="large" />
+          <UserCircleIcon className="size-9" />
           {open && (
             <div className="absolute -right-20 top-[70px] w-[200px] p-5  flex text-left flex-col rounded-xl group bg-white shadow-md">
               <Link
@@ -54,7 +53,7 @@ export const Navigation = () => {
           )}
         </button>
         <div className="text-dark-blue">
-          <ShoppingCartRoundedIcon fontSize="large" />
+          <ShoppingCartIcon className="size-9" />
         </div>
         <div className="hidden laptop:flex">
           <Link className="bg-dark-blue text-white px-10 py-5 rounded-xl font-medium inline-flex items-center justify-center shadow-md" href="/sign-in">Zaloguj się</Link>
