@@ -1,9 +1,9 @@
-import { AccordionItem } from "@homepage/_FAQSection/AccordionItem";
-import { AccordionItemProps } from "@homepage/_FAQSection/types";
+import { AccordionItem } from '@homepage/_FAQSection/AccordionItem'
+import { AccordionItemProps } from '@homepage/_FAQSection/types'
 
 type Props = {
-  faq: AccordionItemProps[];
-};
+  faq: AccordionItemProps[]
+}
 
 export const AccordionMenu = ({ faq }: Props) => {
   return faq.map((item: AccordionItemProps) => (
@@ -13,5 +13,5 @@ export const AccordionMenu = ({ faq }: Props) => {
       question={item.question}
       answer={item.answer}
     />
-  ));
-};
+  ))
+}

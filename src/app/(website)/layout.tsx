@@ -1,5 +1,5 @@
-import { Footer } from "@utilities/Footer";
-import { Navigation } from "@utilities/Navigation";
+import { Footer } from '@utilities/Footer'
+import { Navigation } from '@utilities/Navigation'
 
 export default async function WebSiteLayout({
   children,
@@ -10,5 +10,5 @@ export default async function WebSiteLayout({
       {children}
       <Footer />
     </>
-  );
+  )
 }
