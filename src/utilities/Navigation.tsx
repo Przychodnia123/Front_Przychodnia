@@ -1,9 +1,8 @@
 'use client'
 
-import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded'
+import { UserCircleIcon, ShoppingCartIcon } from '@heroicons/react/24/solid'
 import { Button } from '@utilities/Button'
 import { useOutsideClick } from '@lib/hooks/useClickOutside'
-import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded'
 import { HamburgerMenu } from '@utilities/HamburgerMenu'
 import { Menu } from '@utilities/Menu'
 import Image from 'next/image'
@@ -31,16 +30,14 @@ export const Navigation = () => {
                     height={71}
                 />
             </Link>
-
             <Menu />
-
             <div className='flex items-center gap-x-4 laptop:gap-x-8'>
                 <button
                     ref={ref}
                     onClick={handleClick}
                     className='relative text-dark-blue'
                 >
-                    <AccountCircleRoundedIcon fontSize='large' />
+                    <UserCircleIcon className='size-9' />
                     {open && (
                         <div className='group absolute -right-20 top-[70px] flex w-[200px] flex-col rounded-xl bg-white p-5 text-left shadow-md'>
                             <Link
@@ -59,7 +56,7 @@ export const Navigation = () => {
                     )}
                 </button>
                 <div className='text-dark-blue'>
-                    <ShoppingCartRoundedIcon fontSize='large' />
+                    <ShoppingCartIcon className='size-9' />
                 </div>
                 <div className='hidden laptop:flex'>
                     <Link
