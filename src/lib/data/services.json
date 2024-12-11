@@ -1,38 +1,38 @@
 [
-    {
-        "id": "1",
-        "title": "Skierowanie na badania",
-        "description": "Złóż prośbę online, otrzymaj skierowanie szybko i sprawnie, bez zbędnych formalności.",
-        "image": "/homepage-assets/icons/medical-report2.svg"
-    },
-    {
-        "id": "2",
-        "title": "E-wizyty",
-        "description": "Umów wizytę online, skonsultuj się z lekarzem bez wychodzenia z domu - dostępność 24/7.",
-        "image": "/homepage-assets/icons/doctor1.svg"
-    },
-    {
-        "id": "3",
-        "title": "Wizyty stacjonarne",
-        "description": "Umów wizytę u lekarza stacjonarnie w jednej z naszych placówek.",
-        "image": "/homepage-assets/icons/consultation1.svg"
-    },
-    {
-        "id": "4",
-        "title": "Wizyty domowe",
-        "description": "Umów wizytę lekarską w Twoim domu.",
-        "image": "/homepage-assets/icons/house.svg"
-    },
-    {
-        "id": "5",
-        "title": "Recepty online",
-        "description": "Umów wizytę recepturową, szybko i bez wychodzenia z domu.",
-        "image": "/homepage-assets/icons/online-appointment1.svg"
-    },
-    {
-        "id": "6",
-        "title": "Szybka akceptacja wniosków",
-        "description": "Lekarze mają dostęp do Twojej historii medycznej, a wnioski o skierowania czy recepty są akceptowane niemal natychmiast.",
-        "image": "/homepage-assets/icons/online-appointment2.svg"
-    }
+  {
+    "id": "1",
+    "title": "Skierowanie na badania",
+    "description": "Złóż prośbę online, otrzymaj skierowanie szybko i sprawnie, bez zbędnych formalności.",
+    "image": "/homepage-assets/icons/medical-report2.svg"
+  },
+  {
+    "id": "2",
+    "title": "E-wizyty",
+    "description": "Umów wizytę online, skonsultuj się z lekarzem bez wychodzenia z domu - dostępność 24/7.",
+    "image": "/homepage-assets/icons/doctor1.svg"
+  },
+  {
+    "id": "3",
+    "title": "Wizyty stacjonarne",
+    "description": "Umów wizytę u lekarza stacjonarnie w jednej z naszych placówek.",
+    "image": "/homepage-assets/icons/consultation1.svg"
+  },
+  {
+    "id": "4",
+    "title": "Wizyty domowe",
+    "description": "Umów wizytę lekarską w Twoim domu.",
+    "image": "/homepage-assets/icons/house.svg"
+  },
+  {
+    "id": "5",
+    "title": "Recepty online",
+    "description": "Umów wizytę recepturową, szybko i bez wychodzenia z domu.",
+    "image": "/homepage-assets/icons/online-appointment1.svg"
+  },
+  {
+    "id": "6",
+    "title": "Szybka akceptacja wniosków",
+    "description": "Lekarze mają dostęp do Twojej historii medycznej, a wnioski o skierowania czy recepty są akceptowane niemal natychmiast.",
+    "image": "/homepage-assets/icons/online-appointment2.svg"
+  }
 ]

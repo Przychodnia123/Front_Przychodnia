@@ -6,14 +6,14 @@ import { OfferSection } from '@homepage/_OfferSection/OfferSection'
 import { ReviewsSection } from '@homepage/_ReviewsSection/ReviewsSection'
 
 export default function Home() {
-    return (
-        <>
-            <MainSection />
-            <CounterSection />
-            <OfferSection />
-            <CTASection />
-            <FAQSection />
-            <ReviewsSection />
-        </>
-    )
+  return (
+    <>
+      <MainSection />
+      <CounterSection />
+      <OfferSection />
+      <CTASection />
+      <FAQSection />
+      <ReviewsSection />
+    </>
+  )
 }

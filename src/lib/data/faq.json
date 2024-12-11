@@ -1,27 +1,27 @@
 [
-    {
-        "id": "1",
-        "question": "Jak mogę umówić się na wizytę w e-przychodni?",
-        "answer": "Aby umówić się na wizytę, wystarczy zarejestrować się na naszej platformie i wybrać dostępnego lekarza oraz termin, który odpowiada Twoim preferencjom."
-    },
-    {
-        "id": "2",
-        "question": "Jak złożyć prośbę o skierowanie online?",
-        "answer": "Proces jest prosty! Po zarejestrowaniu się na naszej platformie kliknij zakładkę 'Skierowanie' i postępuj zgodnie z instrukcjami"
-    },
-    {
-        "id": "3",
-        "question": "Jakie są godziny pracy e-poradni?",
-        "answer": "E-poradnia jest dostępna 24/7. Możesz skorzystać z naszych usług w dowolnym czasie, bez względu na dzień tygodnia czy porę dnia."
-    },
-    {
-        "id": "4",
-        "question": "Czy korzystanie z e-poradni jest bezpieczne?",
-        "answer": "Tak, e-poradnia zapewnia bezpieczne środowisko komunikacji. Wszystkie rozmowy są poufne i chronione zgodnie z przepisami dotyczącymi prywatności."
-    },
-    {
-        "id": "5",
-        "question": "Czy mogę korzystać z e-poradni z dowolnego miejsca?",
-        "answer": "Tak, nasza platforma jest dostępna online, co oznacza, że możesz korzystać z naszych usług z dowolnego miejsca, o każdej porze dnia i nocy."
-    }
+  {
+    "id": "1",
+    "question": "Jak mogę umówić się na wizytę w e-przychodni?",
+    "answer": "Aby umówić się na wizytę, wystarczy zarejestrować się na naszej platformie i wybrać dostępnego lekarza oraz termin, który odpowiada Twoim preferencjom."
+  },
+  {
+    "id": "2",
+    "question": "Jak złożyć prośbę o skierowanie online?",
+    "answer": "Proces jest prosty! Po zarejestrowaniu się na naszej platformie kliknij zakładkę 'Skierowanie' i postępuj zgodnie z instrukcjami"
+  },
+  {
+    "id": "3",
+    "question": "Jakie są godziny pracy e-poradni?",
+    "answer": "E-poradnia jest dostępna 24/7. Możesz skorzystać z naszych usług w dowolnym czasie, bez względu na dzień tygodnia czy porę dnia."
+  },
+  {
+    "id": "4",
+    "question": "Czy korzystanie z e-poradni jest bezpieczne?",
+    "answer": "Tak, e-poradnia zapewnia bezpieczne środowisko komunikacji. Wszystkie rozmowy są poufne i chronione zgodnie z przepisami dotyczącymi prywatności."
+  },
+  {
+    "id": "5",
+    "question": "Czy mogę korzystać z e-poradni z dowolnego miejsca?",
+    "answer": "Tak, nasza platforma jest dostępna online, co oznacza, że możesz korzystać z naszych usług z dowolnego miejsca, o każdej porze dnia i nocy."
+  }
 ]

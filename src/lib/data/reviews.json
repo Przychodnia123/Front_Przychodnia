@@ -1,50 +1,50 @@
 [
-    {
-        "id": "1",
-        "name": "Robert V.",
-        "description": "Nigdy nie byłem bardziej zadowolony z obsługi medycznej. Dzięki temu portalowi zaoszczędziłem mnóstwo czasu. Polecam każdemu!",
-        "rate": "4.5",
-        "location": "Warsaw, Poland",
-        "image": "/homepage-assets/avatar-1.svg"
-    },
-    {
-        "id": "2",
-        "name": "Anna K.",
-        "description": "Korzystałam z usług e-przychodni i jestem zachwycona profesjonalizmem oraz empatią specjalisty. Dzięki nim otrzymałam cenne wsparcie.",
-        "rate": "4.5",
-        "location": "Warsaw, Poland",
-        "image": "/homepage-assets/avatar-1.svg"
-    },
-    {
-        "id": "3",
-        "name": "Karolina W.",
-        "description": "Bardzo polecam e-przychodnię każdemu, kto ma problem z dostępem do tradycyjnych usług terapeutycznych. To wygodne i skuteczne rozwiązanie.",
-        "rate": "4.5",
-        "location": "Warsaw, Poland",
-        "image": "/homepage-assets/avatar-1.svg"
-    },
-    {
-        "id": "4",
-        "name": "Piotr N.",
-        "description": "Profesjonalizm i troska o pacjenta - to cechy, które wyróżniają e-przychodnie spośród innych platform. Elastyczność terminów również na plus.",
-        "rate": "4.5",
-        "location": "Warsaw, Poland",
-        "image": "/homepage-assets/avatar-1.svg"
-    },
-    {
-        "id": "5",
-        "name": "Katarzyna B.",
-        "description": "Konsultacje online w e-przychodni są świetnym rozwiązaniem dla osób, które chcą zachować anonimowość, a jednocześnie otrzymać pomoc.",
-        "rate": "4.5",
-        "location": "Warsaw, Poland",
-        "image": "/homepage-assets/avatar-1.svg"
-    },
-    {
-        "id": "6",
-        "name": "Michał D.",
-        "description": "Jestem wdzięczny e-przychodni za wsparcie, jakie otrzymałem w trudnym okresie. Profesjonalizm i cierpliwość terapeutów naprawdę robią różnicę.",
-        "rate": "4.5",
-        "location": "Warsaw, Poland",
-        "image": "/homepage-assets/avatar-1.svg"
-    }
+  {
+    "id": "1",
+    "name": "Robert V.",
+    "description": "Nigdy nie byłem bardziej zadowolony z obsługi medycznej. Dzięki temu portalowi zaoszczędziłem mnóstwo czasu. Polecam każdemu!",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/homepage-assets/avatar-1.svg"
+  },
+  {
+    "id": "2",
+    "name": "Anna K.",
+    "description": "Korzystałam z usług e-przychodni i jestem zachwycona profesjonalizmem oraz empatią specjalisty. Dzięki nim otrzymałam cenne wsparcie.",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/homepage-assets/avatar-1.svg"
+  },
+  {
+    "id": "3",
+    "name": "Karolina W.",
+    "description": "Bardzo polecam e-przychodnię każdemu, kto ma problem z dostępem do tradycyjnych usług terapeutycznych. To wygodne i skuteczne rozwiązanie.",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/homepage-assets/avatar-1.svg"
+  },
+  {
+    "id": "4",
+    "name": "Piotr N.",
+    "description": "Profesjonalizm i troska o pacjenta - to cechy, które wyróżniają e-przychodnie spośród innych platform. Elastyczność terminów również na plus.",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/homepage-assets/avatar-1.svg"
+  },
+  {
+    "id": "5",
+    "name": "Katarzyna B.",
+    "description": "Konsultacje online w e-przychodni są świetnym rozwiązaniem dla osób, które chcą zachować anonimowość, a jednocześnie otrzymać pomoc.",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/homepage-assets/avatar-1.svg"
+  },
+  {
+    "id": "6",
+    "name": "Michał D.",
+    "description": "Jestem wdzięczny e-przychodni za wsparcie, jakie otrzymałem w trudnym okresie. Profesjonalizm i cierpliwość terapeutów naprawdę robią różnicę.",
+    "rate": "4.5",
+    "location": "Warsaw, Poland",
+    "image": "/homepage-assets/avatar-1.svg"
+  }
 ]
