@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const Carousel = ({ reviews }: Props) => {
-  const swiperRef = useRef<SwiperType>();
+  const swiperRef = useRef<SwiperType>(null);
   return (
     <>
       <Swiper
