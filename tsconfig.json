@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,20 +23,36 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@app/*": ["src/app/*"],
-      "@utilities/*": ["src/utilities/*"],
-      "@lib/*": ["src/lib/*"],
-      "@homepage/*": ["src/app/(website)/(homepage)/*"],
-      "@auth/*": ["src/app/(auth)/*"]
-    }
+      "@/*": [
+        "./*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@utilities/*": [
+        "src/utilities/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@homepage/*": [
+        "src/app/(website)/(homepage)/*"
+      ],
+      "@auth/*": [
+        "src/app/(auth)/*"
+      ]
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "."
-, ".lintstagedrc.mjs"  ],
-  "exclude": ["node_modules"]
+    ".",
+    ".lintstagedrc.mjs",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
