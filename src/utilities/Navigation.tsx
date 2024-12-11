@@ -1,7 +1,6 @@
 'use client'
 
 import { UserCircleIcon, ShoppingCartIcon } from '@heroicons/react/24/solid'
-import { Button } from '@utilities/Button'
 import { useOutsideClick } from '@lib/hooks/useClickOutside'
 import { HamburgerMenu } from '@utilities/HamburgerMenu'
 import { Menu } from '@utilities/Menu'
@@ -27,7 +26,6 @@ export const Navigation = () => {
       </Link>
 
       <Menu />
-
       <div className='flex items-center gap-x-4 laptop:gap-x-8'>
         <button
           ref={ref}
