@@ -6,6 +6,7 @@ import { z } from 'zod'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
+import { Label } from '@/src/utilities/Label'
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>
 
@@ -24,26 +25,33 @@ export const SignInForm = () => {
 
   return (
     <form
+      noValidate
       onSubmit={handleSubmit(onSubmit)}
       className='flex h-full w-full flex-col space-y-5 py-10 tablet:h-auto'
     >
-      <Input
-        type='email'
-        label='Adres e-mail'
-        placeholder='example@example.com'
-        id='email'
-        {...register('email')}
-        error={errors.email}
-      />
-      <Input
-        type='password'
-        label='Hasło'
-        placeholder='********'
-        id='password'
-        {...register('password')}
-        error={errors.password}
-      />
+      <div>
+        <Label htmlFor='email'>Adres e-mail</Label>
+        <Input
+          type='email'
+          placeholder='example@example.com'
+          id='email'
+          {...register('email')}
+          error={errors.email}
+        />
+      </div>
+      <div>
+        <Label htmlFor='password'>Hasło</Label>
+        <Input
+          type='password'
+          placeholder='********'
+          id='password'
+          {...register('password')}
+          error={errors.password}
+        />
+      </div>
       <div className='flex justify-between'>
+        {/* TODO: use Checkbox component */}
+
         <label>
           <input type='checkbox' />
           <span className='ml-2'>Zapamiętaj hasło</span>
