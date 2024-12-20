@@ -11,7 +11,7 @@ export default function SignUp() {
       <SignUpForm />
       <p>
         Masz już konto?
-        <Link className='ml-3 text-light-blue' href={'/sign-in'}>
+        <Link className='ml-3 text-light-blue' href='/logowanie'>
           Zaloguj się
         </Link>
       </p>

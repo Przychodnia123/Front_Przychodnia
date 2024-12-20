@@ -18,7 +18,7 @@ export const CTASection = () => {
           teraz! Wspólnie zadbamy o Twoje zdrowie i dobre samopoczucie!
         </p>
         <Link
-          href='/sign-in'
+          href='/logowanie'
           className='inline-flex items-center justify-center rounded-xl bg-white px-10 py-5 font-medium text-dark-blue shadow-md'
         >
           Zarejestruj się na e-wizytę

@@ -37,13 +37,13 @@ export const Navigation = () => {
             <div className='group absolute -right-20 top-[70px] flex w-[200px] flex-col rounded-xl bg-white p-5 text-left shadow-md'>
               <Link
                 className='w-full rounded-md p-2 hover:bg-medium-gray/25 hover:font-medium'
-                href='/sign-in'
+                href='/logowanie'
               >
                 Zaloguj się
               </Link>
               <Link
                 className='w-full rounded-md p-2 hover:bg-medium-gray/25 hover:font-medium'
-                href='/sign-up'
+                href='/rejestracja'
               >
                 Zarejestruj się
               </Link>
@@ -56,7 +56,7 @@ export const Navigation = () => {
         <div className='hidden laptop:flex'>
           <Link
             className='inline-flex items-center justify-center rounded-xl bg-dark-blue px-10 py-5 font-medium text-white shadow-md'
-            href='/sign-in'
+            href='/logowanie'
           >
             Zaloguj się
           </Link>

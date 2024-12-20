@@ -15,14 +15,14 @@ export const MainSection = () => {
         </p>
         <div className='flex flex-col items-center gap-5 tablet:flex-row'>
           <Link
-            href='/sign-up'
+            href='/rejestracja'
             className='inline-flex items-center justify-center rounded-xl bg-dark-blue px-10 py-5 font-medium text-white shadow-md'
           >
             Zarejestruj się teraz
           </Link>
           <p>
             Masz już konto?{' '}
-            <Link className='font-medium text-light-blue' href='/sign-in'>
+            <Link className='font-medium text-light-blue' href='/logowanie'>
               Zaloguj się!
             </Link>
           </p>
