@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "pretty": "prettier --check \"src/**/*.*\"",
-    "pretty-fix": "prettier --write \"src/**/*.*\""
+    "pretty-fix": "prettier --write \"src/**/*.*\"",
+    "prepare": "husky"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -28,7 +29,10 @@
     "@types/react-dom": "^19.0.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0",
+    "eslint-config-next": "^15.0.0-canary.130",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
     "postcss": "^8.4.49",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",

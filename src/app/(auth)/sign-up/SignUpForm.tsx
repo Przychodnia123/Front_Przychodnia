@@ -19,7 +19,7 @@ export const SignUpForm = () => {
     resolver: zodResolver(SignUpValidationSchema),
   })
 
-  const onSubmit: SubmitHandler<SignUpFormValues> = (values) => {
+  const onSubmit: SubmitHandler<SignUpFormValues> = () => {
     // TODO: Handle form submission, e.g., send data to an API
   }
 

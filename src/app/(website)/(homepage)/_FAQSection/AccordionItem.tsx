@@ -4,7 +4,7 @@ import { AccordionItemProps } from '@homepage/_FAQSection/types'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react'
 
-export const AccordionItem = ({ answer, question, id }: AccordionItemProps) => {
+export const AccordionItem = ({ answer, question }: AccordionItemProps) => {
   const [accordionOpen, setAccordionOpen] = useState(false)
   return (
     <div className='py-2'>
