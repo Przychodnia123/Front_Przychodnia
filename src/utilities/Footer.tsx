@@ -18,16 +18,16 @@ export const Footer = () => {
             <Link href='/'>Strona główna</Link>
           </li>
           <li>
-            <Link href='/about'>O nas</Link>
+            <Link href='o-nas'>O nas</Link>
           </li>
           <li>
-            <Link href='/services'>Usługi</Link>
+            <Link href='/uslugi'>Usługi</Link>
           </li>
           <li>
-            <Link href='/news'>Aktualnośći</Link>
+            <Link href='/aktualnosci'>Aktualności</Link>
           </li>
           <li>
-            <Link href='/contact'>Kontakt</Link>
+            <Link href='/kontakt'>Kontakt</Link>
           </li>
         </ul>
       </div>
@@ -35,8 +35,8 @@ export const Footer = () => {
       <div className='flex w-full flex-col justify-between border-t-2 border-t-dark-blue/20 pt-5 text-center tablet:px-8 laptop:flex-row'>
         <p>©{year} e-przychodnia. All rights reserved</p>
         <div className='flex flex-col gap-x-3 laptop:flex-row'>
-          <Link href='/privacy-policy'>Privacy & Policy</Link>
-          <Link href='/terms-and-conditions'>Terms & Condition</Link>
+          <Link href='/polityka-prywatnosci'>Polityka prywatności</Link>
+          <Link href='/regulamin'>Regulamin</Link>
         </div>
       </div>
     </footer>
