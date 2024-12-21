@@ -1,3 +1,4 @@
+import { routes } from '@/src/lib/consts/routes'
 import { SignUpForm } from '@auth/sign-up/SignUpForm'
 import { Title } from '@utilities/Title'
 import Image from 'next/image'
@@ -11,7 +12,7 @@ export default function SignUp() {
       <SignUpForm />
       <p>
         Masz już konto?
-        <Link className='ml-3 text-light-blue' href='/logowanie'>
+        <Link className='ml-3 text-light-blue' href={routes.signIn}>
           Zaloguj się
         </Link>
       </p>

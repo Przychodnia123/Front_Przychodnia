@@ -7,6 +7,7 @@ import { Menu } from '@utilities/Menu'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { routes } from '@/src/lib/consts/routes'
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false)
@@ -21,7 +22,7 @@ export const Navigation = () => {
 
   return (
     <nav className='flex w-full items-center justify-between px-5 py-4 laptop:px-10 desktop:px-40'>
-      <Link className='w-2/4 tablet:w-auto' href='/'>
+      <Link className='w-2/4 tablet:w-auto' href={routes.home}>
         <Image src='/nav-assets/logo.png' alt='Logo' width={208} height={71} />
       </Link>
 
@@ -37,13 +38,13 @@ export const Navigation = () => {
             <div className='group absolute -right-20 top-[70px] flex w-[200px] flex-col rounded-xl bg-white p-5 text-left shadow-md'>
               <Link
                 className='w-full rounded-md p-2 hover:bg-medium-gray/25 hover:font-medium'
-                href='/logowanie'
+                href={routes.signIn}
               >
                 Zaloguj się
               </Link>
               <Link
                 className='w-full rounded-md p-2 hover:bg-medium-gray/25 hover:font-medium'
-                href='/rejestracja'
+                href={routes.signUp}
               >
                 Zarejestruj się
               </Link>
@@ -56,7 +57,7 @@ export const Navigation = () => {
         <div className='hidden laptop:flex'>
           <Link
             className='inline-flex items-center justify-center rounded-xl bg-dark-blue px-10 py-5 font-medium text-white shadow-md'
-            href='/logowanie'
+            href={routes.signIn}
           >
             Zaloguj się
           </Link>

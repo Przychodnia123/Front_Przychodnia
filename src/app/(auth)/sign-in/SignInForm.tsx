@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
 import { Label } from '@/src/utilities/Label'
+import { routes } from '@/src/lib/consts/routes'
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>
 
@@ -56,7 +57,7 @@ export const SignInForm = () => {
           <input type='checkbox' />
           <span className='ml-2'>Zapamiętaj hasło</span>
         </label>
-        <Link className='text-light-blue' href='/'>
+        <Link className='text-light-blue' href={routes.home}>
           Nie pamiętasz hasła?
         </Link>
       </div>
