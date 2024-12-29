@@ -18,7 +18,7 @@ export const Footer = () => {
             <Link href='/'>Strona główna</Link>
           </li>
           <li>
-            <Link href='o-nas'>O nas</Link>
+            <Link href='/o-nas'>O nas</Link>
           </li>
           <li>
             <Link href='/uslugi'>Usługi</Link>
