@@ -25,7 +25,7 @@ export const Footer = () => {
             <Link href={routes.services}>Usługi</Link>
           </li>
           <li>
-            <Link href={routes.news}>Aktualnośći</Link>
+            <Link href={routes.news}>Aktualności</Link>
           </li>
           <li>
             <Link href={routes.contact}>Kontakt</Link>
@@ -36,8 +36,8 @@ export const Footer = () => {
       <div className='flex w-full flex-col justify-between border-t-2 border-t-dark-blue/20 pt-5 text-center tablet:px-8 laptop:flex-row'>
         <p>©{year} e-przychodnia. All rights reserved</p>
         <div className='flex flex-col gap-x-3 laptop:flex-row'>
-          <Link href={routes.privacyPolicy}>Privacy & Policy</Link>
-          <Link href={routes.termsAndConditions}>Terms & Condition</Link>
+          <Link href={routes.privacyPolicy}>Polityka prywatności</Link>
+          <Link href={routes.termsAndConditions}>Regulamin</Link>
         </div>
       </div>
     </footer>
