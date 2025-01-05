@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { routes } from '@/src/lib/consts/routes'
 
 type Props = {
   mobile?: boolean
@@ -14,19 +15,19 @@ export const Menu = ({ mobile }: Props) => {
       } font-semibold text-dark-blue`}
     >
       <li>
-        <Link href='/'>Strona główna</Link>
+        <Link href={routes.home}>Strona główna</Link>
       </li>
       <li>
-        <Link href='/about'>O nas</Link>
+        <Link href={routes.about}>O nas</Link>
       </li>
       <li>
-        <Link href='/services'>Usługi</Link>
+        <Link href={routes.services}>Usługi</Link>
       </li>
       <li>
-        <Link href='/news'>Aktualności</Link>
+        <Link href={routes.news}>Aktualności</Link>
       </li>
       <li>
-        <Link href='/contact'>Kontakt</Link>
+        <Link href={routes.contact}>Kontakt</Link>
       </li>
     </ul>
   )
