@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { routes } from '@/src/lib/consts/routes'
 
 export const Footer = () => {
   const now = new Date()
@@ -15,19 +16,19 @@ export const Footer = () => {
         </div>
         <ul className='hidden text-sm font-medium laptop:flex laptop:gap-x-3 desktop:gap-x-6'>
           <li>
-            <Link href='/'>Strona główna</Link>
+            <Link href={routes.home}>Strona główna</Link>
           </li>
           <li>
-            <Link href='/o-nas'>O nas</Link>
+            <Link href={routes.about}>O nas</Link>
           </li>
           <li>
-            <Link href='/uslugi'>Usługi</Link>
+            <Link href={routes.services}>Usługi</Link>
           </li>
           <li>
-            <Link href='/aktualnosci'>Aktualności</Link>
+            <Link href={routes.news}>Aktualności</Link>
           </li>
           <li>
-            <Link href='/kontakt'>Kontakt</Link>
+            <Link href={routes.contact}>Kontakt</Link>
           </li>
         </ul>
       </div>
@@ -35,8 +36,8 @@ export const Footer = () => {
       <div className='flex w-full flex-col justify-between border-t-2 border-t-dark-blue/20 pt-5 text-center tablet:px-8 laptop:flex-row'>
         <p>©{year} e-przychodnia. All rights reserved</p>
         <div className='flex flex-col gap-x-3 laptop:flex-row'>
-          <Link href='/polityka-prywatnosci'>Polityka prywatności</Link>
-          <Link href='/regulamin'>Regulamin</Link>
+          <Link href={routes.privacyPolicy}>Polityka prywatności</Link>
+          <Link href={routes.termsAndConditions}>Regulamin</Link>
         </div>
       </div>
     </footer>

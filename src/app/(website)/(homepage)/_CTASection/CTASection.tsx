@@ -1,3 +1,4 @@
+import { routes } from '@/src/lib/consts/routes'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -18,7 +19,7 @@ export const CTASection = () => {
           teraz! Wspólnie zadbamy o Twoje zdrowie i dobre samopoczucie!
         </p>
         <Link
-          href='/logowanie'
+          href={routes.signIn}
           className='inline-flex items-center justify-center rounded-xl bg-white px-10 py-5 font-medium text-dark-blue shadow-md'
         >
           Zarejestruj się na e-wizytę
