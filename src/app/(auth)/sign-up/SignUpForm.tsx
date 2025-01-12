@@ -17,6 +17,7 @@ export const SignUpForm = () => {
     formState: { errors },
   } = useForm<SignUpFormValues>({
     resolver: zodResolver(SignUpValidationSchema),
+    mode: 'onBlur',
   })
 
   const onSubmit: SubmitHandler<SignUpFormValues> = () => {
