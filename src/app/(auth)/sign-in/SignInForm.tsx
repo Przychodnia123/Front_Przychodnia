@@ -18,6 +18,7 @@ export const SignInForm = () => {
     formState: { errors },
   } = useForm<SignInFormValues>({
     resolver: zodResolver(SignInValidationSchema),
+    mode: 'onBlur',
   })
 
   const onSubmit: SubmitHandler<SignInFormValues> = () => {
