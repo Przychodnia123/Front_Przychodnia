@@ -11,17 +11,17 @@
   },
   {
     "id": "3",
-    "question": "Jakie są godziny pracy e-poradni?",
-    "answer": "E-poradnia jest dostępna 24/7. Możesz skorzystać z naszych usług w dowolnym czasie, bez względu na dzień tygodnia czy porę dnia."
+    "question": "Jakie są godziny pracy e-przychodni?",
+    "answer": "e-przychodnia jest dostępna 24/7. Możesz skorzystać z naszych usług w dowolnym czasie, bez względu na dzień tygodnia czy porę dnia."
   },
   {
     "id": "4",
-    "question": "Czy korzystanie z e-poradni jest bezpieczne?",
-    "answer": "Tak, e-poradnia zapewnia bezpieczne środowisko komunikacji. Wszystkie rozmowy są poufne i chronione zgodnie z przepisami dotyczącymi prywatności."
+    "question": "Czy korzystanie z e-przychodni jest bezpieczne?",
+    "answer": "Tak, e-przychodnia zapewnia bezpieczne środowisko komunikacji. Wszystkie rozmowy są poufne i chronione zgodnie z przepisami dotyczącymi prywatności."
   },
   {
     "id": "5",
-    "question": "Czy mogę korzystać z e-poradni z dowolnego miejsca?",
+    "question": "Czy mogę korzystać z e-przychodni z dowolnego miejsca?",
     "answer": "Tak, nasza platforma jest dostępna online, co oznacza, że możesz korzystać z naszych usług z dowolnego miejsca, o każdej porze dnia i nocy."
   }
 ]

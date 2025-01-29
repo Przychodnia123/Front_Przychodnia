@@ -34,7 +34,7 @@ export const Footer = () => {
       </div>
 
       <div className='flex w-full flex-col justify-between border-t-2 border-t-dark-blue/20 pt-5 text-center tablet:px-8 laptop:flex-row'>
-        <p>©{year} e-przychodnia. All rights reserved</p>
+        <p>©{year} e-przychodnia. Wszelkie prawa zastrzeżone.</p>
         <div className='flex flex-col gap-x-3 laptop:flex-row'>
           <Link href={routes.privacyPolicy}>Polityka prywatności</Link>
           <Link href={routes.termsAndConditions}>Regulamin</Link>
