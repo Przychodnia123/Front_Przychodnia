@@ -10,7 +10,7 @@ export const apiClient = async <T>(
       'Content-Type': 'application/json',
       ...headers,
     },
-    body: body ? JSON.stringify(body) : undefined,
+    body,
     ...customOptions,
   })
 
