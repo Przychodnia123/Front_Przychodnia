@@ -2,17 +2,27 @@ import { ApiError } from '../types'
 
 export const apiClient = async <T>(
   endpoint: string,
-  { method = 'GET', body, headers = {}, ...customOptions }: RequestInit = {}
+  {
+    method = 'GET',
+    body,
+    headers = {},
+    token,
+    ...customOptions
+  }: RequestInit & { token?: string } = {}
 ): Promise<T> => {
-  const res = await fetch(`${process.env.BASE_API_URL}${endpoint}`, {
-    method,
-    headers: {
-      'Content-Type': 'application/json',
-      ...headers,
-    },
-    body: body ? JSON.stringify(body) : undefined,
-    ...customOptions,
-  })
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}${endpoint}`,
+    {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...headers,
+      },
+      body: body ? JSON.stringify(body) : undefined,
+      ...customOptions,
+    }
+  )
 
   let responseData: T | null
 

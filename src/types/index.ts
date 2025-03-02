@@ -5,7 +5,7 @@ export type ApiError = {
 export type User = {
   email: string
   is_staff: boolean
-  last_login: Date
+  last_login: string
   to_accept_staff: boolean
   username: string
 }
