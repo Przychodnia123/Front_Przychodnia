@@ -1,4 +1,4 @@
-import { LoginData, LoginResponse } from '../types'
+import { LoginData, LoginResponse } from '@customtypes/index'
 import { apiClient } from './apiClient'
 
 export const login = (data: LoginData): Promise<LoginResponse> => {

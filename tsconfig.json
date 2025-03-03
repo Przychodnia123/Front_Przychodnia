@@ -35,6 +35,9 @@
       "@lib/*": [
         "src/lib/*"
       ],
+      "@customtypes/*": [
+        "src/types/*"
+      ],
       "@homepage/*": [
         "src/app/(website)/(homepage)/*"
       ],

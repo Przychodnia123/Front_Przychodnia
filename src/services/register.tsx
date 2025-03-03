@@ -1,4 +1,4 @@
-import { RegisterData, RegisterResponse } from '../types'
+import { RegisterData, RegisterResponse } from '@customtypes/index'
 import { apiClient } from './apiClient'
 
 export const register = (data: RegisterData): Promise<RegisterResponse> => {
