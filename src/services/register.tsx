@@ -1,5 +1,5 @@
-import { RegisterData, RegisterResponse } from '@customtypes/index'
-import { apiClient } from '@services/apiClient'
+import { RegisterData, RegisterResponse } from '@/types/index'
+import { apiClient } from '@/services/apiClient'
 
 export const register = (data: RegisterData): Promise<RegisterResponse> => {
   return apiClient<RegisterResponse>('/register', {

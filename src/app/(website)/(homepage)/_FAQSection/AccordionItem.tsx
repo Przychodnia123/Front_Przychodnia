@@ -1,6 +1,6 @@
 'use client'
 
-import { AccordionItemProps } from '@homepage/_FAQSection/types'
+import { AccordionItemProps } from '@/homepage/_FAQSection/types'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react'
 

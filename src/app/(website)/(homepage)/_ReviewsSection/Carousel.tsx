@@ -1,8 +1,8 @@
 'use client'
 
-import { Review } from '@homepage/_ReviewsSection/types'
+import { Review } from '@/homepage/_ReviewsSection/types'
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid'
-import { Card } from '@utilities/Card'
+import { Card } from '@/utilities/Card'
 import Image from 'next/image'
 import { useRef } from 'react'
 import { Swiper as SwiperType } from 'swiper'

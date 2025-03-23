@@ -1,5 +1,5 @@
-import { User } from '@customtypes/index'
-import { apiClient } from '@services/apiClient'
+import { User } from '@/types/index'
+import { apiClient } from '@/services/apiClient'
 
 export const getUser = async (token: string) => {
   return apiClient<User | null>('/user_info', {

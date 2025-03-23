@@ -1,7 +1,7 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
 import { FieldError } from 'react-hook-form'
-import { Label } from '@utilities/Label'
-import { Input } from '@utilities/Input'
+import { Label } from '@/utilities/Label'
+import { Input } from '@/utilities/Input'
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   label: string

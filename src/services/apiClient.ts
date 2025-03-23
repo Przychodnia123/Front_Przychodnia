@@ -1,4 +1,4 @@
-import { ApiError } from '@customtypes/index'
+import { ApiError } from '@/types/index'
 
 export const apiClient = async <T>(
   endpoint: string,
