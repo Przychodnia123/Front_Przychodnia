@@ -2,7 +2,13 @@ import { ApiError } from '@/types/index'
 
 export const apiClient = async <T>(
   endpoint: string,
-  { method = 'GET', body, headers = {}, ...customOptions }: RequestInit = {}
+  {
+    method = 'GET',
+    body,
+    headers = {},
+    token,
+    ...customOptions
+  }: RequestInit & { token?: string } = {}
 ): Promise<T> => {
   const res = await fetch(`${process.env.BASE_API_URL}${endpoint}`, {
     method,
