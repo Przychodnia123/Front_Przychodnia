@@ -24,21 +24,12 @@
     ],
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
       ],
-      "@app/*": [
-        "src/app/*"
-      ],
-      "@utilities/*": [
-        "src/utilities/*"
-      ],
-      "@lib/*": [
-        "src/lib/*"
-      ],
-      "@homepage/*": [
+      "@/homepage/*": [
         "src/app/(website)/(homepage)/*"
       ],
-      "@auth/*": [
+      "@/auth/*": [
         "src/app/(auth)/*"
       ]
     },

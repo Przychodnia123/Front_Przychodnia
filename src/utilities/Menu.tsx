@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { routes } from '@/src/lib/consts/routes'
+import { routes } from '@/lib/consts/routes'
 
 type Props = {
   mobile?: boolean
