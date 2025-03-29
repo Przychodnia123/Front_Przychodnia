@@ -6,7 +6,6 @@ export const apiClient = async <T>(
     method = 'GET',
     body,
     headers = {},
-    token,
     ...customOptions
   }: RequestInit & { token?: string } = {}
 ): Promise<T> => {
