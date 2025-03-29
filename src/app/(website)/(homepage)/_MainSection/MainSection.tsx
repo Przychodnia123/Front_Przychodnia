@@ -1,5 +1,5 @@
-import { routes } from '@/src/lib/consts/routes'
-import { Title } from '@utilities/Title'
+import { routes } from '@/lib/consts/routes'
+import { Title } from '@/utilities/Title'
 import Image from 'next/image'
 import Link from 'next/link'
 

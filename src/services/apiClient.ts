@@ -1,8 +1,14 @@
-import { ApiError } from '../types'
+import { ApiError } from '@/types/index'
 
 export const apiClient = async <T>(
   endpoint: string,
-  { method = 'GET', body, headers = {}, ...customOptions }: RequestInit = {}
+  {
+    method = 'GET',
+    body,
+    headers = {},
+    token,
+    ...customOptions
+  }: RequestInit & { token?: string } = {}
 ): Promise<T> => {
   let responseData: T | null
   let res: Response

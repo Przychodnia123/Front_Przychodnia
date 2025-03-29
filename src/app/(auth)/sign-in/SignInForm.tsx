@@ -1,13 +1,13 @@
 'use client'
-import { Input } from '@utilities/Input'
-import { SignInValidationSchema } from '@auth/sign-in/signInValidationSchema'
-import { Button } from '@utilities/Button'
+import { Input } from '@/utilities/Input'
+import { SignInValidationSchema } from '@/auth/sign-in/signInValidationSchema'
+import { Button } from '@/utilities/Button'
 import { z } from 'zod'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
-import { Label } from '@/src/utilities/Label'
-import { routes } from '@/src/lib/consts/routes'
+import { Label } from '@/utilities/Label'
+import { routes } from '@/lib/consts/routes'
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>
 

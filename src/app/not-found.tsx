@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { routes } from '@lib/consts/routes'
+import { routes } from '@/lib/consts/routes'
 
 export default function NotFound() {
   return (
