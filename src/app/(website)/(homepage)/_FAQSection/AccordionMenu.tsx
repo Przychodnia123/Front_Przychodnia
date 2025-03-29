@@ -1,5 +1,5 @@
-import { AccordionItem } from '@homepage/_FAQSection/AccordionItem'
-import { AccordionItemProps } from '@homepage/_FAQSection/types'
+import { AccordionItem } from '@/homepage/_FAQSection/AccordionItem'
+import { AccordionItemProps } from '@/homepage/_FAQSection/types'
 
 type Props = {
   faq: AccordionItemProps[]

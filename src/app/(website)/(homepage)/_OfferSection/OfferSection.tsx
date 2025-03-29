@@ -1,5 +1,5 @@
-import services from '@lib/data/services.json'
-import { Title } from '@utilities/Title'
+import services from '@/lib/data/services.json'
+import { Title } from '@/utilities/Title'
 import Image from 'next/image'
 
 export const OfferSection = () => {

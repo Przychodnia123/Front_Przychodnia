@@ -1,4 +1,4 @@
-import { ApiError } from '@customtypes/index'
+import { ApiError } from '@/types/index'
 
 export const apiClient = async <T>(
   endpoint: string,
@@ -10,19 +10,15 @@ export const apiClient = async <T>(
     ...customOptions
   }: RequestInit & { token?: string } = {}
 ): Promise<T> => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_API_URL}${endpoint}`,
-    {
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        ...headers,
-      },
-      body: body ? JSON.stringify(body) : undefined,
-      ...customOptions,
-    }
-  )
+  const res = await fetch(`${process.env.BASE_API_URL}${endpoint}`, {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+      ...headers,
+    },
+    body,
+    ...customOptions,
+  })
 
   let responseData: T | null
 

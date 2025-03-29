@@ -1,4 +1,4 @@
-import { routes } from '@/src/lib/consts/routes'
+import { routes } from '@/lib/consts/routes'
 import Image from 'next/image'
 import Link from 'next/link'
 

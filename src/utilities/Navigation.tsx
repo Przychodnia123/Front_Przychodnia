@@ -1,13 +1,13 @@
 'use client'
 
 import { UserCircleIcon, ShoppingCartIcon } from '@heroicons/react/24/solid'
-import { useOutsideClick } from '@lib/hooks/useClickOutside'
-import { HamburgerMenu } from '@utilities/HamburgerMenu'
-import { Menu } from '@utilities/Menu'
+import { useOutsideClick } from '@/lib/hooks/useClickOutside'
+import { HamburgerMenu } from '@/utilities/HamburgerMenu'
+import { Menu } from '@/utilities/Menu'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { routes } from '@/src/lib/consts/routes'
+import { routes } from '@/lib/consts/routes'
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false)

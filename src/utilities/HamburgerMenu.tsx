@@ -1,6 +1,6 @@
-import { useOutsideClick } from '@lib/hooks/useClickOutside'
+import { useOutsideClick } from '@/lib/hooks/useClickOutside'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
-import { Menu } from '@utilities/Menu'
+import { Menu } from '@/utilities/Menu'
 import { useState } from 'react'
 
 export const HamburgerMenu = () => {

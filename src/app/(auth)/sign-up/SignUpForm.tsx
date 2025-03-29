@@ -1,12 +1,12 @@
 'use client'
-import { Input } from '@utilities/Input'
-import { SignUpValidationSchema } from '@auth/sign-up/signUpValidationSchema'
-import { Button } from '@utilities/Button'
+import { Input } from '@/utilities/Input'
+import { SignUpValidationSchema } from '@/auth/sign-up/signUpValidationSchema'
+import { Button } from '@/utilities/Button'
 import { z } from 'zod'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Label } from '@/src/utilities/Label'
-import { Checkbox } from '@/src/utilities/Checkbox'
+import { Label } from '@/utilities/Label'
+import { Checkbox } from '@/utilities/Checkbox'
 
 type SignUpFormValues = z.infer<typeof SignUpValidationSchema>
 
