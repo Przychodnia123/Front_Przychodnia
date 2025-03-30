@@ -1,4 +1,5 @@
 import '@/app/globals.css'
+import ReactQueryProvider from '@/lib/providers/ReactQueryProvider'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${roboto.className} h-full w-full bg-light-gray`}>
-        {children}
+        <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>
   )
