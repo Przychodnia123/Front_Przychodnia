@@ -15,6 +15,7 @@ export const HamburgerMenu = () => {
   return (
     <>
       <button
+        data-testid='hamburger-button'
         ref={ref}
         onClick={handleClick}
         className='text-dark-blue laptop:hidden'
@@ -23,6 +24,7 @@ export const HamburgerMenu = () => {
       </button>
       {menuOpen && (
         <div
+          data-testid='mobile-menu'
           ref={ref}
           className='absolute right-0 top-0 flex h-full w-1/2 justify-center rounded-md bg-white pt-28 text-dark-blue shadow-lg tablet:w-1/3'
         >
