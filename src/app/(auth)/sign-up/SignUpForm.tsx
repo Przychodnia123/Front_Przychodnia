@@ -26,6 +26,7 @@ export const SignUpForm = () => {
 
   return (
     <form
+      name='singUpForm'
       noValidate
       onSubmit={handleSubmit(onSubmit)}
       className='flex h-full w-full flex-col py-10 tablet:h-auto'
