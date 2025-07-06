@@ -6,6 +6,7 @@ export const apiClient = async <T>(
     method = 'GET',
     body,
     headers = {},
+    credentials = 'include',
     ...customOptions
   }: RequestInit & { token?: string } = {}
 ): Promise<T> => {
@@ -15,11 +16,12 @@ export const apiClient = async <T>(
   try {
     res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}${endpoint}`, {
       method,
+      credentials,
       headers: {
         'Content-Type': 'application/json',
         ...headers,
       },
-      body: body ? JSON.stringify(body) : undefined,
+      body,
       ...customOptions,
     })
 

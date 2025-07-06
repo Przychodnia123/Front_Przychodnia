@@ -2,6 +2,7 @@ export const routes = {
   home: '/',
   signUp: '/rejestracja',
   signIn: '/logowanie',
+  userProfile: '/profil',
   about: '/o-nas',
   services: '/uslugi',
   news: '/aktualnosci',

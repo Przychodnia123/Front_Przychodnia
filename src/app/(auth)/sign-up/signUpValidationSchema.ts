@@ -4,10 +4,16 @@ export const SignUpValidationSchema = z
   .object({
     username: z
       .string()
-      .min(3, 'Nazwa użytkownika musi mieć co najmniej 3 znaki')
-      .max(20, 'Nazwa użytkownika musi mieć co najwyżej 20 znaków'),
-    email: z.string().email('Nieprawidłowy adres e-mail'),
-    password: z.string().min(8, 'Hasło musi mieć co najmniej 8 znaków'),
+      .min(5, 'Nazwa użytkownika musi mieć co najmniej 5 znaków')
+      .max(20, 'Nazwa użytkownika musi mieć co najwyżej 20 znaków')
+      .trim(),
+    first_name: z.string().min(2, 'Imię musi mieć co najmniej 2 znaki').trim(),
+    last_name: z
+      .string()
+      .min(2, 'Nazwisko musi mieć co najmniej 2 znaki')
+      .trim(),
+    email: z.string().email('Nieprawidłowy adres e-mail').trim(),
+    password: z.string().min(8, 'Hasło musi mieć co najmniej 8 znaków').trim(),
     password2: z.string(),
     terms: z.boolean().refine((val) => val === true, {
       message: 'Akceptacja regulaminu jest wymagana',

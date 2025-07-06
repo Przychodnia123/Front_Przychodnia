@@ -7,6 +7,10 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Label } from '@/utilities/Label'
 import { Checkbox } from '@/utilities/Checkbox'
+import { registerUser } from '@/services/register'
+import { useMutation } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
+import { routes } from '@/lib/consts/routes'
 
 type SignUpFormValues = z.infer<typeof SignUpValidationSchema>
 
@@ -19,9 +23,26 @@ export const SignUpForm = () => {
     resolver: zodResolver(SignUpValidationSchema),
     mode: 'onBlur',
   })
+  const router = useRouter()
 
-  const onSubmit: SubmitHandler<SignUpFormValues> = () => {
-    // TODO: Handle form submission, e.g., send data to an API
+  const { mutateAsync: registerUserMutation } = useMutation({
+    mutationFn: registerUser,
+  })
+
+  const onSubmit: SubmitHandler<SignUpFormValues> = async (data) => {
+    try {
+      await registerUserMutation({
+        email: data.email,
+        first_name: data.first_name,
+        last_name: data.last_name,
+        password: data.password,
+        username: data.username,
+      })
+
+      router.push(routes.userProfile)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
@@ -39,6 +60,26 @@ export const SignUpForm = () => {
           id='username'
           {...register('username')}
           error={errors.username}
+        />
+      </div>
+      <div className='mb-5'>
+        <Label htmlFor='first_name'>Imię</Label>
+        <Input
+          type='text'
+          placeholder='Andrzej'
+          id='first_name'
+          {...register('first_name')}
+          error={errors.first_name}
+        />
+      </div>
+      <div className='mb-5'>
+        <Label htmlFor='last_name'>Nazwisko</Label>
+        <Input
+          type='text'
+          placeholder='Kowalski'
+          id='last_name'
+          {...register('last_name')}
+          error={errors.last_name}
         />
       </div>
       <div className='mb-5'>

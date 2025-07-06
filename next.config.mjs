@@ -11,6 +11,10 @@ const nextConfig = {
             destination: '/sign-up',
           },
           {
+            source: '/profil',
+            destination: '/user-profile',
+          },
+          {
             source: '/o-nas',
             destination: '/about',
           },

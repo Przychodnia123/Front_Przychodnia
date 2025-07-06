@@ -18,17 +18,11 @@ export type RegisterData = {
   username: string
 }
 
-export type RegisterResponse = {
+export type AuthResponse = {
   msg: string
 }
 
 export type LoginData = {
-  email: string
+  value: string
   password: string
-}
-
-export type LoginResponse = {
-  access_token: string
-  msg: string
-  refresh_token: string
 }

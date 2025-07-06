@@ -8,6 +8,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
 import { Label } from '@/utilities/Label'
 import { routes } from '@/lib/consts/routes'
+import { useRouter } from 'next/navigation'
+import { useLogin } from '@/lib/hooks/useLogin'
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>
 
@@ -21,8 +23,22 @@ export const SignInForm = () => {
     mode: 'onBlur',
   })
 
-  const onSubmit: SubmitHandler<SignInFormValues> = () => {
-    // TODO: Handle form submission, e.g., send data to an API
+  const loginMutation = useLogin()
+
+  const router = useRouter()
+
+  const onSubmit: SubmitHandler<SignInFormValues> = async (data) => {
+    try {
+      //TODO: set loading state
+      await loginMutation.mutateAsync({
+        password: data.password,
+        value: data.email,
+      })
+
+      router.push(routes.userProfile)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
