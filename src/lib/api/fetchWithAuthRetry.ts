@@ -1,27 +1,71 @@
+import { cookies } from 'next/headers'
+import { extractCookieValue } from '../utils/extractCookieValue'
+
+async function fetchRefreshToken(cookieHeader: string) {
+  return await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/refresh_token`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Cookie: cookieHeader,
+    },
+  })
+}
+
 export const fetchWithAuthRetry = async <T = unknown>(
   url: string,
   options: RequestInit = {}
 ): Promise<T> => {
-  let res = await fetch(url, options)
+  const cookieStore = await cookies()
 
-  if (res.status === 401) {
-    const refresh = await fetch(
-      `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/refreshToken`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-      }
+  let initialResponse = await fetch(url, {
+    ...options,
+    credentials: 'include',
+    headers: {
+      ...options.headers,
+      Cookie: cookieStore.toString(),
+    },
+  })
+
+  if (initialResponse.status === 401) {
+    console.log('Need to refresh token')
+    const refreshResponse = await fetchRefreshToken(cookieStore.toString())
+
+    const newSetCookie = refreshResponse.headers.get('set-cookie')
+
+    if (!refreshResponse.ok || !newSetCookie) {
+      throw new Error('Session expired')
+    }
+
+    const newAccessToken = extractCookieValue(
+      'access_token_cookie',
+      newSetCookie
     )
 
-    if (refresh.ok) {
-      res = await fetch(url, options)
+    if (!newAccessToken) {
+      throw new Error('Session expired')
     }
+
+    cookieStore.set('access_token_cookie', newAccessToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7,
+    })
+
+    initialResponse = await fetch(url, {
+      ...options,
+      credentials: 'include',
+      headers: {
+        ...options.headers,
+        Cookie: cookieStore.toString(),
+      },
+    })
   }
 
-  if (!res.ok) {
-    const error = await res.json().catch(() => ({}))
-    throw new Error(error?.message || 'Błąd żądania')
+  if (!initialResponse.ok) {
+    throw new Error('Something went wrong')
   }
 
-  return res.json() as T
+  return initialResponse.json() as T
 }

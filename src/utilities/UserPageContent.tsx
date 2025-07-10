@@ -1,11 +1,12 @@
 'use client'
 
 import { routes } from '@/lib/consts/routes'
+import { User } from '@/types'
 import { logoutUser } from '@/services/logoutUser'
 import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 
-export const UserPageContent = () => {
+export const UserPageContent = ({ user }: { user?: User }) => {
   const router = useRouter()
 
   const logoutMutation = useMutation({
@@ -25,6 +26,7 @@ export const UserPageContent = () => {
   return (
     <>
       <p>User profile</p>
+      {user && <h3>Logged user email: {user.email}</h3>}
       <button onClick={handleLogout}>Wyloguj się</button>
     </>
   )

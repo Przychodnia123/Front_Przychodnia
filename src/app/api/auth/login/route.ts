@@ -1,17 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-
-export function extractCookieValue(
-  name: string,
-  setCookie: string
-): string | null {
-  const match = setCookie.match(new RegExp(`${name}=([^;]+)`))
-  return match?.[1] || null
-}
+import { extractCookieValue } from '@/lib/utils/extractCookieValue'
 
 export async function POST(req: NextRequest) {
   const { value, password } = await req.json()
-  const cookieStore = await cookies()
 
   const backendRes = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_API_URL}/login`,
@@ -19,7 +11,6 @@ export async function POST(req: NextRequest) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ value, password }),
-      credentials: 'include',
     }
   )
 
@@ -36,6 +27,8 @@ export async function POST(req: NextRequest) {
     )
   }
 
+  const cookieStore = await cookies()
+
   const accessToken = extractCookieValue('access_token_cookie', setCookie)
   const refreshToken = extractCookieValue('refresh_token_cookie', setCookie)
 
@@ -46,7 +39,7 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  cookieStore.set('token', accessToken, {
+  cookieStore.set('access_token_cookie', accessToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
@@ -54,7 +47,7 @@ export async function POST(req: NextRequest) {
     maxAge: 60 * 15,
   })
 
-  cookieStore.set('refresh_token', refreshToken, {
+  cookieStore.set('refresh_token_cookie', refreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',

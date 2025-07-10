@@ -1,13 +1,12 @@
+import { extractCookieValue } from '@/lib/utils/extractCookieValue'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
-import { extractCookieValue } from '../login/route'
 
+// TODO It's not used rn
 export async function POST() {
   const cookieStore = await cookies()
 
-  console.log('cookieStore', cookieStore)
-
-  const refresh_token = cookieStore.get('refresh_token')?.value
+  const refresh_token = cookieStore.get('refresh_token_cookie')?.value
 
   if (!refresh_token) {
     return NextResponse.json(
@@ -32,7 +31,7 @@ export async function POST() {
     return NextResponse.json({ error: 'Unable to refresh' }, { status: 401 })
   }
 
-  cookieStore.set('token', newToken, {
+  cookieStore.set('access_token_cookie', newToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
