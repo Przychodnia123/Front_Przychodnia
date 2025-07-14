@@ -15,7 +15,7 @@ export const UserPageContent = ({ user }: { user?: User }) => {
 
   const handleLogout = async () => {
     try {
-      logoutMutation.mutateAsync()
+      await logoutMutation.mutateAsync()
 
       router.push(routes.home)
     } catch (error) {
