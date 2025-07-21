@@ -25,6 +25,7 @@ export const SignUpForm = () => {
   })
   const router = useRouter()
 
+  // TODO Add toast notification for successful registration
   const { mutateAsync: registerUserMutation } = useMutation({
     mutationFn: registerUser,
   })
@@ -39,7 +40,7 @@ export const SignUpForm = () => {
         username: data.username,
       })
 
-      router.push(routes.userProfile)
+      router.push(routes.signIn)
     } catch (error) {
       console.error(error)
     }

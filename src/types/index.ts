@@ -21,7 +21,7 @@ export type RegisterData = {
   username: string
 }
 
-export type AuthResponse = {
+export type ApiResponse = {
   msg: string
 }
 

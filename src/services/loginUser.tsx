@@ -1,9 +1,9 @@
-import { AuthResponse } from '@/types'
+import { ApiResponse } from '@/types'
 
 export const loginUser = async (
   password: string,
   value: string
-): Promise<AuthResponse> => {
+): Promise<ApiResponse> => {
   const res = await fetch('/api/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

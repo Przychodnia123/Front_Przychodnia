@@ -75,7 +75,7 @@ export const SignInForm = () => {
           <input type='checkbox' />
           <span className='ml-2'>Zapamiętaj hasło</span>
         </label>
-        <Link className='text-light-blue' href={routes.home}>
+        <Link className='text-light-blue' href={routes.resetPassword}>
           Nie pamiętasz hasła?
         </Link>
       </div>

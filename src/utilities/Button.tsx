@@ -7,6 +7,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   bg?: 'dark-blue' | 'white'
   textColor: 'dark-blue' | 'white'
   classes?: string
+  disabled?: boolean
 }
 
 export const Button = ({
@@ -15,6 +16,7 @@ export const Button = ({
   textColor,
   type,
   classes,
+  disabled,
   ...props
 }: Props) => {
   return (
@@ -22,8 +24,10 @@ export const Button = ({
       type={type}
       className={cn(
         `bg-${bg} text-${textColor} inline-flex items-center justify-center rounded-xl px-10 py-5 font-medium shadow-md`,
-        classes
+        classes,
+        disabled && 'bg-dark-gray'
       )}
+      disabled={disabled}
       {...props}
     >
       <span>{text}</span>
