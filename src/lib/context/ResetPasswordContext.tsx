@@ -15,7 +15,7 @@ const defaultState: ResetPasswordContextState = {
   setCode: () => {},
 }
 
-const ResetPasswordContext = createContext(defaultState)
+export const ResetPasswordContext = createContext(defaultState)
 
 export const ResetPasswordProvider = ({ children }: PropsWithChildren) => {
   const [email, setEmail] = useState<string>('')

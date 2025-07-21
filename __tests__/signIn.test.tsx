@@ -1,6 +1,16 @@
-import { expect, it, describe, beforeEach } from 'vitest'
+import { expect, it, describe, beforeEach, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import SignIn from '@/app/(auth)/sign-in/page'
+
+vi.mock('next/navigation', () => ({
+  useRouter: vi.fn(),
+}))
+
+vi.mock('@/lib/hooks/useLogin', () => ({
+  useLogin: vi.fn().mockReturnValue({
+    mutateAsync: vi.fn(),
+  }),
+}))
 
 describe('SignIn', () => {
   beforeEach(() => {

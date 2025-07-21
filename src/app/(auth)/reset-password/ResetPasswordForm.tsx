@@ -7,7 +7,7 @@ import { z } from 'zod'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { useResetPassword } from '@/lib/hooks/userResetPassword'
+import { useResetPassword } from '@/lib/hooks/useResetPassword'
 import { routes } from '@/lib/consts/routes'
 import { Button, Input, Label, Spinner } from '@/utilities'
 

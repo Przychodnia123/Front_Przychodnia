@@ -7,7 +7,7 @@ import { z } from 'zod'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { useResetPassword } from '@/lib/hooks/userResetPassword'
+import { useResetPassword } from '@/lib/hooks/useResetPassword'
 import { routes } from '@/lib/consts/routes'
 import { Button, Input, Label, Spinner } from '@/utilities'
 
@@ -53,7 +53,7 @@ export const ConfirmPasswordForm = () => {
       className='flex h-full w-full flex-col space-y-5 py-5 tablet:h-auto'
     >
       <div>
-        <Label htmlFor='code' className='text-dark-blue'>
+        <Label htmlFor='password' className='text-dark-blue'>
           Nowe hasło
         </Label>
         <Input
@@ -66,7 +66,7 @@ export const ConfirmPasswordForm = () => {
         />
       </div>
       <div className='pb-5'>
-        <Label htmlFor='code' className='text-dark-blue'>
+        <Label htmlFor='confirmPassword' className='text-dark-blue'>
           Powtórz nowe hasło
         </Label>
         <Input

@@ -1,6 +1,16 @@
-import { expect, it, describe, beforeEach } from 'vitest'
+import { expect, it, describe, beforeEach, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import SignUp from '@/app/(auth)/sign-up/page'
+
+vi.mock('next/navigation', () => ({
+  useRouter: vi.fn(),
+}))
+
+vi.mock('@tanstack/react-query', () => ({
+  useMutation: vi.fn().mockReturnValue({
+    mutateAsync: vi.fn(),
+  }),
+}))
 
 describe('SignUp', () => {
   beforeEach(() => {
