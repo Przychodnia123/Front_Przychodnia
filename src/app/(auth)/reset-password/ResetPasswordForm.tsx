@@ -3,13 +3,14 @@ import { useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 import { z } from 'zod'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useResetPassword } from '@/lib/hooks/useResetPassword'
 import { routes } from '@/lib/consts/routes'
-import { Button, Input, Label, Spinner } from '@/utilities'
+import { Button, Input, Label } from '@/utilities'
 
 import { resetPasswordValidationSchema } from './resetPasswordValidation'
 
@@ -28,21 +29,36 @@ export const ResetPasswordForm = () => {
   })
 
   const {
-    resetPasswordMutation: {
-      mutateAsync: resetPasswordRequest,
-      isPending,
-      error,
-    },
+    resetPasswordMutation: { mutateAsync: resetPasswordRequest, isPending },
   } = useResetPassword()
+
+  const resetPassword = useCallback(
+    async (email: string) => {
+      await resetPasswordRequest({ email })
+      router.push(routes.resetPasswordVerifyCode)
+    },
+    [resetPasswordRequest, router]
+  )
 
   const onSubmit: SubmitHandler<ResetPasswordFormValues> = useCallback(
     async ({ email }: ResetPasswordFormValues) => {
       try {
-        await resetPasswordRequest({ email })
-        router.push(routes.resetPasswordVerifyCode)
+        await toast.promise(
+          () => resetPassword(email),
+          {
+            loading: 'Generowanie kodu...',
+            success: 'Kod weryfikacyjny został wysłany na adres e-mail',
+            error: (error) => error.message,
+          },
+          {
+            style: {
+              minWidth: '250px',
+            },
+          }
+        )
       } catch {}
     },
-    [router, resetPasswordRequest]
+    [resetPassword]
   )
 
   return (
@@ -65,10 +81,6 @@ export const ResetPasswordForm = () => {
           disabled={isPending}
         />
       </div>
-      {isPending && <Spinner />}
-      {error && !isPending && (
-        <div className='text-center text-alert'>{error.message}</div>
-      )}
       <Button
         textColor='white'
         bg='dark-blue'

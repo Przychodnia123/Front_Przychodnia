@@ -2,7 +2,7 @@ import { ApiResponse } from '@/types'
 
 const statusCodeToErrorMessageMap = {
   400: 'Nieprawidłowy kod weryfikacyjny',
-  404: 'Sprawdź czy Twój adres email jest prawidłowy',
+  404: 'Nieprawidłowy kod weryfikacyjny',
 }
 
 export const verifyCode = async (

@@ -11,8 +11,11 @@ export const loginUser = async (
   })
 
   if (!res.ok) {
-    const { error } = await res.json()
-    throw new Error(error || 'Login failed')
+    throw new Error(
+      res.status === 401
+        ? 'Nieprawidłowy email lub hasło'
+        : 'Logowanie nie powiodło się'
+    )
   }
 
   return res.json()

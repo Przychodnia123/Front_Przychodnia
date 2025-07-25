@@ -3,13 +3,15 @@ import { useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
+
 import { z } from 'zod'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useResetPassword } from '@/lib/hooks/useResetPassword'
 import { routes } from '@/lib/consts/routes'
-import { Button, Input, Label, Spinner } from '@/utilities'
+import { Button, Input, Label } from '@/utilities'
 
 import { confirmPasswordValidationSchema } from '../resetPasswordValidation'
 
@@ -28,21 +30,36 @@ export const ConfirmPasswordForm = () => {
   })
 
   const {
-    confirmResetMutation: {
-      mutateAsync: confirmPasswordRequest,
-      isPending,
-      error,
-    },
+    confirmResetMutation: { mutateAsync: confirmPasswordRequest, isPending },
   } = useResetPassword()
+
+  const confirmPassword = useCallback(
+    async (password: string) => {
+      await confirmPasswordRequest({ password })
+      router.push(routes.signIn)
+    },
+    [confirmPasswordRequest, router]
+  )
 
   const onSubmit: SubmitHandler<ConfirmPasswordFormValues> = useCallback(
     async ({ password }: ConfirmPasswordFormValues) => {
       try {
-        await confirmPasswordRequest({ password })
-        router.push(routes.signIn)
+        await toast.promise(
+          () => confirmPassword(password),
+          {
+            loading: 'Resetowanie hasła...',
+            success: 'Hasło zostało zresetowane. Możesz się zalogować',
+            error: (error) => error.message,
+          },
+          {
+            style: {
+              minWidth: '250px',
+            },
+          }
+        )
       } catch {}
     },
-    [router, confirmPasswordRequest]
+    [confirmPassword]
   )
 
   return (
@@ -78,10 +95,6 @@ export const ConfirmPasswordForm = () => {
           disabled={isPending}
         />
       </div>
-      {isPending && <Spinner />}
-      {error && !isPending && (
-        <div className='text-center text-alert'>{error.message}</div>
-      )}
       <Button
         textColor='white'
         bg='dark-blue'

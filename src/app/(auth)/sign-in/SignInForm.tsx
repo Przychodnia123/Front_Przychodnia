@@ -10,6 +10,7 @@ import { Label } from '@/utilities/Label'
 import { routes } from '@/lib/consts/routes'
 import { useRouter } from 'next/navigation'
 import { useLogin } from '@/lib/hooks/useLogin'
+import toast from 'react-hot-toast'
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>
 
@@ -29,16 +30,25 @@ export const SignInForm = () => {
 
   const onSubmit: SubmitHandler<SignInFormValues> = async (data) => {
     try {
-      //TODO: set loading state
-      await loginMutation.mutateAsync({
-        password: data.password,
-        value: data.email,
-      })
-
-      router.push(routes.userProfile)
-    } catch (error) {
-      console.error(error)
-    }
+      await toast.promise(
+        async () => {
+          await loginMutation.mutateAsync({
+            password: data.password,
+            value: data.email,
+          })
+          router.push(routes.userProfile)
+        },
+        {
+          loading: 'Logowanie...',
+          error: (error) => error.message,
+        },
+        {
+          style: {
+            minWidth: '250px',
+          },
+        }
+      )
+    } catch {}
   }
 
   return (

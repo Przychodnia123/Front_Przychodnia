@@ -1,17 +1,23 @@
 'use client'
-import { useCurrentUser } from '@/lib/hooks/useCurrentUser'
+import toast from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
+
 import { UserPageContent } from '@/utilities/UserPageContent'
+import { useCurrentUser } from '@/lib/hooks/useCurrentUser'
+import { routes } from '@/lib/consts/routes'
 
 export default function UserProfile() {
-  const { data, isLoading, error } = useCurrentUser()
+  const router = useRouter()
+  const { data, error, isPending } = useCurrentUser()
 
-  if (isLoading) {
-    return <h3>Loading...</h3>
-  }
-
-  if (error) {
-    // TODO When session expired, redirect to login page
-    return <h3>Error: {error.message}</h3>
+  if (error && !isPending) {
+    toast.dismiss()
+    toast.error(error.message, {
+      duration: 2000,
+    })
+    if (error.cause === 401) {
+      router.push(routes.signIn)
+    }
   }
 
   return (

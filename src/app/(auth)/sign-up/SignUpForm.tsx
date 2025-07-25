@@ -11,6 +11,7 @@ import { registerUser } from '@/services/register'
 import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import { routes } from '@/lib/consts/routes'
+import toast from 'react-hot-toast'
 
 type SignUpFormValues = z.infer<typeof SignUpValidationSchema>
 
@@ -32,18 +33,30 @@ export const SignUpForm = () => {
 
   const onSubmit: SubmitHandler<SignUpFormValues> = async (data) => {
     try {
-      await registerUserMutation({
-        email: data.email,
-        first_name: data.first_name,
-        last_name: data.last_name,
-        password: data.password,
-        username: data.username,
-      })
+      await toast.promise(
+        async () => {
+          await registerUserMutation({
+            email: data.email,
+            first_name: data.first_name,
+            last_name: data.last_name,
+            password: data.password,
+            username: data.username,
+          })
 
-      router.push(routes.signIn)
-    } catch (error) {
-      console.error(error)
-    }
+          router.push(routes.signIn)
+        },
+        {
+          loading: 'Tworzenie konta...',
+          success: 'Konto zostało utworzone. Możesz się zalogować',
+          error: (error) => error.message,
+        },
+        {
+          style: {
+            minWidth: '250px',
+          },
+        }
+      )
+    } catch {}
   }
 
   return (

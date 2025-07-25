@@ -3,13 +3,14 @@ import { useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 import { z } from 'zod'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useResetPassword } from '@/lib/hooks/useResetPassword'
 import { routes } from '@/lib/consts/routes'
-import { Button, Input, Label, Spinner } from '@/utilities'
+import { Button, Input, Label } from '@/utilities'
 
 import { verifyCodeValidationSchema } from '../resetPasswordValidation'
 
@@ -28,17 +29,36 @@ export const VerifyCodeForm = () => {
   })
 
   const {
-    verifyCodeMutation: { mutateAsync: verifyCodeRequest, isPending, error },
+    verifyCodeMutation: { mutateAsync: verifyCodeRequest, isPending },
   } = useResetPassword()
+
+  const verifyCode = useCallback(
+    async (code: string) => {
+      await verifyCodeRequest({ code })
+      router.push(routes.resetPasswordConfirm)
+    },
+    [verifyCodeRequest, router]
+  )
 
   const onSubmit: SubmitHandler<VerifyCodeFormValues> = useCallback(
     async ({ code }: VerifyCodeFormValues) => {
       try {
-        await verifyCodeRequest({ code })
-        router.push(routes.resetPasswordConfirm)
+        await toast.promise(
+          () => verifyCode(code),
+          {
+            loading: 'Weryfikacja kodu...',
+            success: 'Kod został zweryfikowany',
+            error: (error) => error.message,
+          },
+          {
+            style: {
+              minWidth: '250px',
+            },
+          }
+        )
       } catch {}
     },
-    [router, verifyCodeRequest]
+    [verifyCode]
   )
 
   return (
@@ -61,10 +81,6 @@ export const VerifyCodeForm = () => {
           disabled={isPending}
         />
       </div>
-      {isPending && <Spinner />}
-      {error && !isPending && (
-        <div className='text-center text-alert'>{error.message}</div>
-      )}
       <Button
         textColor='white'
         bg='dark-blue'

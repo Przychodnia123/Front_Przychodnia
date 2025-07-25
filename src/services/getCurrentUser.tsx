@@ -5,10 +5,14 @@ export const getCurrentUser = async (): Promise<User> => {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   })
-
+  console.log('res', res)
   if (!res.ok) {
-    const { error } = await res.json()
-    throw new Error(error || 'Getting user failed')
+    throw new Error(
+      res.status === 401
+        ? 'Sesja wygasła. Zaloguj się ponownie'
+        : 'Nie można pobrać użytkownika',
+      { cause: res.status }
+    )
   }
   const data = await res.json()
   return data
