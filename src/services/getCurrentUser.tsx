@@ -5,7 +5,6 @@ export const getCurrentUser = async (): Promise<User> => {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   })
-  console.log('res', res)
   if (!res.ok) {
     throw new Error(
       res.status === 401

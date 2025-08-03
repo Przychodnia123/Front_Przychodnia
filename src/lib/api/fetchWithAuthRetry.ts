@@ -4,10 +4,7 @@ import { extractCookieValue } from '../utils/extractCookieValue'
 async function fetchRefreshToken(cookieHeader: string) {
   return await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/refresh_token`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Cookie: cookieHeader,
-    },
+    headers: { 'Content-Type': 'application/json', Cookie: cookieHeader },
   })
 }
 
@@ -20,14 +17,10 @@ export const fetchWithAuthRetry = async <T = unknown>(
   let initialResponse = await fetch(url, {
     ...options,
     credentials: 'include',
-    headers: {
-      ...options.headers,
-      Cookie: cookieStore.toString(),
-    },
+    headers: { ...options.headers, Cookie: cookieStore.toString() },
   })
 
   if (initialResponse.status === 401) {
-    console.log('Need to refresh token')
     const refreshResponse = await fetchRefreshToken(cookieStore.toString())
 
     const newSetCookie = refreshResponse.headers.get('set-cookie')
@@ -56,10 +49,7 @@ export const fetchWithAuthRetry = async <T = unknown>(
     initialResponse = await fetch(url, {
       ...options,
       credentials: 'include',
-      headers: {
-        ...options.headers,
-        Cookie: cookieStore.toString(),
-      },
+      headers: { ...options.headers, Cookie: cookieStore.toString() },
     })
   }
 
