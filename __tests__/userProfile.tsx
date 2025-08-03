@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, Mock } from 'vitest'
+import { describe, it, expect, vi, Mock } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import UserProfile from '@/app/(auth)/user-profile/page'
 import mockToast from 'react-hot-toast'
@@ -42,10 +42,6 @@ function setupUserProfile(mockUser: MockUser, routerMock = defaultRouterMock) {
 }
 
 describe('UserProfile', () => {
-  beforeEach(() => {
-    vi.clearAllMocks()
-  })
-
   it('renders user data', () => {
     const user = { name: 'Test User' }
     setupUserProfile({ data: user, error: null, isPending: false })
