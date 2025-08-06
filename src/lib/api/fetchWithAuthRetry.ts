@@ -9,9 +9,10 @@ async function fetchRefreshToken(cookieHeader: string) {
 }
 
 export const fetchWithAuthRetry = async <T = unknown>(
-  url: string,
+  path: string,
   options: RequestInit = {}
 ): Promise<T> => {
+  const url = `${process.env.NEXT_PUBLIC_BASE_API_URL}/${path}`
   const cookieStore = await cookies()
 
   let initialResponse = await fetch(url, {
