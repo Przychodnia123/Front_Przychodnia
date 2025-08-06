@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Title } from '@/utilities/Title'
 import { routes } from '@/lib/consts/routes'
 
-import { ResetPasswordForm } from './ResetPasswordForm'
+import { ResetPasswordForm } from '@/app/(auth)/reset-password/ResetPasswordForm'
 
 export default function ResetPassword() {
   return (

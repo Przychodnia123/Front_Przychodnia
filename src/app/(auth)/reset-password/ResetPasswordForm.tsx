@@ -12,7 +12,7 @@ import { useResetPassword } from '@/lib/hooks/useResetPassword'
 import { routes } from '@/lib/consts/routes'
 import { Button, Input, Label } from '@/utilities'
 
-import { resetPasswordValidationSchema } from './resetPasswordValidation'
+import { resetPasswordValidationSchema } from '@/app/(auth)/reset-password/resetPasswordValidation'
 
 type ResetPasswordFormValues = z.infer<typeof resetPasswordValidationSchema>
 

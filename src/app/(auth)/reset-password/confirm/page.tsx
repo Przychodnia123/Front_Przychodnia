@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Title } from '@/utilities/Title'
 import { routes } from '@/lib/consts/routes'
 
-import { ConfirmPasswordForm } from './ConfirmPasswordForm'
+import { ConfirmPasswordForm } from '@/app/(auth)/reset-password/confirm/ConfirmPasswordForm'
 
 export default function ConfirmPassword() {
   return (

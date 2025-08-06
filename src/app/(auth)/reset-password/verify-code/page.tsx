@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Title } from '@/utilities/Title'
 import { routes } from '@/lib/consts/routes'
 
-import { VerifyCodeForm } from './VerifyCodeForm'
+import { VerifyCodeForm } from '@/app/(auth)/reset-password/verify-code/VerifyCodeForm'
 
 export default function VerifyCode() {
   return (
