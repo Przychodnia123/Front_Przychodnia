@@ -1,18 +1,15 @@
+import { apiClient } from '@/lib/api/client/apiClient'
 import { User } from '@/types'
 
+const statusCodeToErrorMessageMap = {
+  401: 'Sesja wygasła. Zaloguj się ponownie',
+}
+
 export const getCurrentUser = async (): Promise<User> => {
-  const res = await fetch('/api/auth/currentUser', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  })
-  if (!res.ok) {
-    throw new Error(
-      res.status === 401
-        ? 'Sesja wygasła. Zaloguj się ponownie'
-        : 'Nie można pobrać użytkownika',
-      { cause: res.status }
-    )
-  }
-  const data = await res.json()
-  return data
+  return await apiClient(
+    'auth/currentUser',
+    undefined,
+    'Nie można pobrać użytkownika',
+    statusCodeToErrorMessageMap
+  )
 }

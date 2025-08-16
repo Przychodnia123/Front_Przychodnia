@@ -1,3 +1,4 @@
+import { apiClient } from '@/lib/api/client/apiClient'
 import { ApiResponse } from '@/types'
 
 const statusCodeToErrorMessageMap = {
@@ -10,22 +11,13 @@ export const confirmReset = async (
   code: string,
   password: string
 ): Promise<ApiResponse> => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_API_URL}/confirm-reset`,
+  return await apiClient(
+    'auth/confirmReset',
     {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, code, password }),
-    }
+    },
+    'Nie udało się zresetować hasła',
+    statusCodeToErrorMessageMap
   )
-
-  if (!res.ok) {
-    throw new Error(
-      statusCodeToErrorMessageMap[
-        res.status as keyof typeof statusCodeToErrorMessageMap
-      ] || 'Nie udało się zresetować hasła'
-    )
-  }
-
-  return res.json()
 }

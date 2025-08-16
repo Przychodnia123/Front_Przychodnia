@@ -1,3 +1,4 @@
+import { apiClient } from '@/lib/api/client/apiClient'
 import { ApiResponse } from '@/types'
 
 const statusCodeToErrorMessageMap = {
@@ -8,22 +9,13 @@ const statusCodeToErrorMessageMap = {
 export const resetPasswordRequest = async (
   email: string
 ): Promise<ApiResponse> => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_API_URL}/request-reset`,
+  return await apiClient(
+    'auth/resetPasswordRequest',
     {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
-    }
+    },
+    'Nie udało się wysłać kodu resetującego hasło',
+    statusCodeToErrorMessageMap
   )
-
-  if (!res.ok) {
-    throw new Error(
-      statusCodeToErrorMessageMap[
-        res.status as keyof typeof statusCodeToErrorMessageMap
-      ] || 'Nie udało się wysłać kodu resetującego hasło'
-    )
-  }
-
-  return res.json()
 }

@@ -1,11 +1,11 @@
-export const logoutUser = async () => {
-  const res = await fetch('/api/auth/logout', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  })
+import { apiClient } from '@/lib/api/client/apiClient'
 
-  if (!res.ok) {
-    const { error } = await res.json()
-    throw new Error(error || 'Logout failed')
-  }
+export const logoutUser = async () => {
+  return await apiClient(
+    'auth/logout',
+    {
+      method: 'POST',
+    },
+    'Wylogowanie nie powiodło się'
+  )
 }
