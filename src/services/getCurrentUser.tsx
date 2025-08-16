@@ -8,7 +8,7 @@ const statusCodeToErrorMessageMap = {
 export const getCurrentUser = async (): Promise<User> => {
   return await apiClient(
     'auth/currentUser',
-    undefined,
+    {},
     'Nie można pobrać użytkownika',
     statusCodeToErrorMessageMap
   )
