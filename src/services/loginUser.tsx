@@ -7,13 +7,14 @@ const statusCodeToErrorMessageMap = {
 
 export const loginUser = async (
   password: string,
-  value: string
+  value: string,
+  rememberMe: boolean
 ): Promise<ApiResponse> => {
   return await apiClient(
     'auth/login',
     {
       method: 'POST',
-      body: JSON.stringify({ password, value }),
+      body: JSON.stringify({ password, value, rememberMe }),
     },
     'Logowanie nie powiodło się',
     statusCodeToErrorMessageMap
