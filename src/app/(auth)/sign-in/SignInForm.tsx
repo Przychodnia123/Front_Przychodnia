@@ -11,6 +11,7 @@ import { routes } from '@/lib/consts/routes'
 import { useRouter } from 'next/navigation'
 import { useLogin } from '@/lib/hooks/useLogin'
 import toast from 'react-hot-toast'
+import { Checkbox } from '@/utilities'
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>
 
@@ -35,6 +36,7 @@ export const SignInForm = () => {
           await loginMutation.mutateAsync({
             password: data.password,
             value: data.email,
+            rememberMe: data.rememberMe || false,
           })
           router.push(routes.userProfile)
         },
@@ -79,12 +81,12 @@ export const SignInForm = () => {
         />
       </div>
       <div className='flex justify-between'>
-        {/* TODO: use Checkbox component */}
-
-        <label>
-          <input type='checkbox' />
-          <span className='ml-2'>Zapamiętaj hasło</span>
-        </label>
+        <Checkbox
+          id='rememberMe'
+          label='Zapamiętaj hasło'
+          {...register('rememberMe')}
+          error={errors.rememberMe}
+        />
         <Link className='text-light-blue' href={routes.resetPassword}>
           Nie pamiętasz hasła?
         </Link>
