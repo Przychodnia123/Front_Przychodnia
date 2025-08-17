@@ -3,7 +3,14 @@ import { loginUser } from '@/services/loginUser'
 
 export const useLogin = () => {
   return useMutation({
-    mutationFn: ({ password, value }: { password: string; value: string }) =>
-      loginUser(password, value),
+    mutationFn: ({
+      password,
+      value,
+      rememberMe,
+    }: {
+      password: string
+      value: string
+      rememberMe: boolean
+    }) => loginUser(password, value, rememberMe),
   })
 }
