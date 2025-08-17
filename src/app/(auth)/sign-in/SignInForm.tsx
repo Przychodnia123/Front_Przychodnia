@@ -9,8 +9,9 @@ import Link from 'next/link'
 import { Label } from '@/utilities/Label'
 import { routes } from '@/lib/consts/routes'
 import { useRouter } from 'next/navigation'
-import { useLogin } from '@/lib/hooks/useLogin'
 import toast from 'react-hot-toast'
+import { useMutation } from '@tanstack/react-query'
+import { loginUser } from '@/services/loginUser'
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>
 
@@ -24,7 +25,10 @@ export const SignInForm = () => {
     mode: 'onBlur',
   })
 
-  const loginMutation = useLogin()
+  const loginMutation = useMutation({
+    mutationFn: ({ password, value }: { password: string; value: string }) =>
+      loginUser(password, value),
+  })
 
   const router = useRouter()
 
@@ -38,15 +42,8 @@ export const SignInForm = () => {
           })
           router.push(routes.userProfile)
         },
-        {
-          loading: 'Logowanie...',
-          error: (error) => error.message,
-        },
-        {
-          style: {
-            minWidth: '250px',
-          },
-        }
+        { loading: 'Logowanie...', error: (error) => error.message },
+        { style: { minWidth: '250px' } }
       )
     } catch {}
   }
