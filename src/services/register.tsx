@@ -15,7 +15,7 @@ export const registerUser = async (
     'auth/register',
     {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: data as unknown as BodyInit,
     },
     'Coś poszło nie tak. Spróbuj ponownie później',
     statusCodeToErrorMessageMap

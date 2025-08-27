@@ -14,7 +14,7 @@ export const verifyCode = async (
     'auth/verifyCode',
     {
       method: 'POST',
-      body: JSON.stringify({ email, code }),
+      body: { email, code } as unknown as BodyInit,
     },
     'Nie udało się zweryfikować kodu',
     statusCodeToErrorMessageMap

@@ -15,7 +15,7 @@ export const confirmReset = async (
     'auth/confirmReset',
     {
       method: 'POST',
-      body: JSON.stringify({ email, code, password }),
+      body: { email, code, password } as unknown as BodyInit,
     },
     'Nie udało się zresetować hasła',
     statusCodeToErrorMessageMap

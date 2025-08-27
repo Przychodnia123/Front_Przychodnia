@@ -13,7 +13,7 @@ export const resetPasswordRequest = async (
     'auth/resetPasswordRequest',
     {
       method: 'POST',
-      body: JSON.stringify({ email }),
+      body: { email } as unknown as BodyInit,
     },
     'Nie udało się wysłać kodu resetującego hasło',
     statusCodeToErrorMessageMap

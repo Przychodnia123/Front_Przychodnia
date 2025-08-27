@@ -15,7 +15,7 @@ export async function apiClient(
       ...(body ? { 'Content-Type': 'application/json' } : {}),
       ...headers,
     },
-    body,
+    body: JSON.stringify(body),
     ...customOptions,
   })
 }

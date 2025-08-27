@@ -4,11 +4,11 @@ import { apiClient } from '@/lib/api/server/apiClient'
 import { setUpCookies } from '@/lib/api/server/setUpCookies'
 
 export async function POST(req: NextRequest) {
-  const data = await req.json()
+  const body = await req.json()
 
   const response = await apiClient('login', {
     method: 'POST',
-    body: JSON.stringify(data),
+    body,
   })
 
   if (!response.ok) {

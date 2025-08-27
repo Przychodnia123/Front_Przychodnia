@@ -12,7 +12,7 @@ export async function apiClient<T>(
       ...(body ? { 'Content-Type': 'application/json' } : {}),
       ...headers,
     },
-    body,
+    body: JSON.stringify(body),
     ...customOptions,
   })
 

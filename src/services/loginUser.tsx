@@ -13,7 +13,7 @@ export const loginUser = async (
     'auth/login',
     {
       method: 'POST',
-      body: JSON.stringify({ password, value }),
+      body: { password, value } as unknown as BodyInit,
     },
     'Logowanie nie powiodło się',
     statusCodeToErrorMessageMap
