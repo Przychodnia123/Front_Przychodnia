@@ -13,6 +13,7 @@ import toast from 'react-hot-toast'
 import { Checkbox } from '@/utilities'
 import { useMutation } from '@tanstack/react-query'
 import { loginUser } from '@/services/loginUser'
+import { LoginData } from '@/types'
 
 type SignInFormValues = z.infer<typeof SignInValidationSchema>
 
@@ -27,15 +28,8 @@ export const SignInForm = () => {
   })
 
   const loginMutation = useMutation({
-    mutationFn: ({
-      password,
-      value,
-      rememberMe,
-    }: {
-      password: string
-      value: string
-      rememberMe: boolean
-    }) => loginUser(password, value, rememberMe),
+    mutationFn: ({ password, value, rememberMe }: LoginData) =>
+      loginUser(password, value, rememberMe),
   })
 
   const router = useRouter()
@@ -47,7 +41,7 @@ export const SignInForm = () => {
           await loginMutation.mutateAsync({
             password: data.password,
             value: data.email,
-            rememberMe: data.rememberMe || false,
+            rememberMe: data.rememberMe,
           })
           router.push(routes.userProfile)
         },
