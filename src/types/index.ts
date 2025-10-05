@@ -4,10 +4,13 @@ export type ApiError = {
 
 export type User = {
   email: string
-  is_staff: boolean
-  last_login: string
-  to_accept_staff: boolean
   username: string
+  dateJoined: string
+  firstName: string
+  isActive: boolean
+  isSuperuser: boolean
+  lastLogin: string
+  lastName: string
 }
 
 export type RegisterData = {
@@ -18,17 +21,12 @@ export type RegisterData = {
   username: string
 }
 
-export type RegisterResponse = {
+export type ApiResponse = {
   msg: string
 }
 
 export type LoginData = {
-  email: string
+  value: string
   password: string
-}
-
-export type LoginResponse = {
-  access_token: string
-  msg: string
-  refresh_token: string
+  rememberMe?: boolean
 }
