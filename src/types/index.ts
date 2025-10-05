@@ -28,4 +28,5 @@ export type ApiResponse = {
 export type LoginData = {
   value: string
   password: string
+  rememberMe?: boolean
 }

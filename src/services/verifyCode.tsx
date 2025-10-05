@@ -1,3 +1,4 @@
+import { apiClient } from '@/lib/api/client/apiClient'
 import { ApiResponse } from '@/types'
 
 const statusCodeToErrorMessageMap = {
@@ -9,22 +10,13 @@ export const verifyCode = async (
   email: string,
   code: string
 ): Promise<ApiResponse> => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_API_URL}/verify-code`,
+  return await apiClient(
+    'auth/verifyCode',
     {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, code }),
-    }
+      body: { email, code } as unknown as BodyInit,
+    },
+    'Nie udało się zweryfikować kodu',
+    statusCodeToErrorMessageMap
   )
-
-  if (!res.ok) {
-    throw new Error(
-      statusCodeToErrorMessageMap[
-        res.status as keyof typeof statusCodeToErrorMessageMap
-      ] || 'Nie udało się zweryfikować kodu'
-    )
-  }
-
-  return res.json()
 }

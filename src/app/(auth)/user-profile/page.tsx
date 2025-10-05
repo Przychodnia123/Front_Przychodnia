@@ -3,12 +3,17 @@ import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 
 import { UserPageContent } from '@/utilities/UserPageContent'
-import { useCurrentUser } from '@/lib/hooks/useCurrentUser'
 import { routes } from '@/lib/consts/routes'
+import { getCurrentUser } from '@/services/getCurrentUser'
+import { useQuery } from '@tanstack/react-query'
 
 export default function UserProfile() {
   const router = useRouter()
-  const { data, error, isPending } = useCurrentUser()
+  const { data, error, isPending } = useQuery({
+    queryKey: ['user'],
+    queryFn: () => getCurrentUser(),
+    retry: false,
+  })
 
   if (error && !isPending) {
     toast.dismiss()

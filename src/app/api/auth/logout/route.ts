@@ -1,21 +1,20 @@
-import { fetchWithAuthRetry } from '@/lib/api/fetchWithAuthRetry'
-import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
+import { fetchWithAuthRetry } from '@/lib/api/server/fetchWithAuthRetry'
+import { clearCookies } from '@/lib/api/server/clearCookies'
+import { UnauthorizedError } from '@/lib/errors/UnauthorizedError'
+
 export async function POST() {
-  const cookieStore = await cookies()
   try {
-    const response = await fetchWithAuthRetry(
-      `${process.env.NEXT_PUBLIC_BASE_API_URL}/logout`,
-      {
-        method: 'POST',
-      }
-    )
-    cookieStore.delete('access_token_cookie')
-    cookieStore.delete('refresh_token_cookie')
+    const response = await fetchWithAuthRetry('logout', {
+      method: 'POST',
+    })
+
+    await clearCookies()
+
     return NextResponse.json(response)
   } catch (error) {
-    if (error instanceof Error && error.message === 'Session expired') {
+    if (error instanceof UnauthorizedError) {
       return NextResponse.json({ error: 'Session expired' }, { status: 401 })
     }
     return NextResponse.json({ error: 'Something went wrong' }, { status: 400 })

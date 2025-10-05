@@ -1,22 +1,28 @@
+import { apiClient } from '@/lib/api/client/apiClient'
 import { ApiResponse } from '@/types'
+
+const statusCodeToErrorMessageMap = {
+  401: 'Nieprawidłowy email lub hasło',
+}
 
 export const loginUser = async (
   password: string,
-  value: string
+  value: string,
+  rememberMe?: boolean
 ): Promise<ApiResponse> => {
-  const res = await fetch('/api/auth/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ password, value }),
-  })
-
-  if (!res.ok) {
-    throw new Error(
-      res.status === 401
-        ? 'Nieprawidłowy email lub hasło'
-        : 'Logowanie nie powiodło się'
-    )
+  const body = {
+    password,
+    value,
+    ...(rememberMe !== undefined && { rememberMe }),
   }
 
-  return res.json()
+  return await apiClient(
+    'auth/login',
+    {
+      method: 'POST',
+      body: body as unknown as BodyInit,
+    },
+    'Logowanie nie powiodło się',
+    statusCodeToErrorMessageMap
+  )
 }
